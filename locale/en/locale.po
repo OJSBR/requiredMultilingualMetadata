@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Required Multilingual Metadata"
+
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Lets the journal require the title and abstract in additional languages, beyond the submission's primary language. By default OJS only requires this metadata in the language the author chose for the submission."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Choose the languages in which the title and the abstract must be filled in for a submission to be completed. The list shows the submission metadata languages enabled for this journal (Settings > Languages)."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "How the rule is applied"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "The primary language of each submission is already required by OJS itself — selecting it here changes nothing. The requirement applies to whoever is submitting: journal managers and editors are not blocked while working on someone else's submission, so incomplete legacy metadata can be kept; but a manager submitting their own article is subject to the rule like any author. If the section is set to \"Abstract not required\", the abstract stays optional in every language."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Metadata language"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "journal default"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "In the submission wizard the tabs for the required languages are opened automatically, so the author is never shown an error for a field they cannot see."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "This journal has no submission metadata languages configured. Enable them under Settings > Website/Journal > Languages before using this plugin."
+
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "This journal also requires this field in {$language}."
+
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Also required in: {$languages}"

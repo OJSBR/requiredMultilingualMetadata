@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Metadados Obrigatórios em Vários Idiomas"
+
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Permite exigir título e resumo também em outros idiomas, além do idioma principal da submissão. Por padrão o OJS só cobra esses metadados no idioma escolhido pelo autor para a submissão."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Marque em quais idiomas o título e o resumo passam a ser obrigatórios para concluir uma submissão. A lista mostra os idiomas de metadados ativos nesta revista (Configurações > Idiomas)."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Como a regra é aplicada"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "O idioma principal de cada submissão já é obrigatório pelo próprio OJS — marcar aqui não muda nada para ele. A exigência vale para quem está submetendo: gestores e editores não são bloqueados ao trabalhar em submissões de terceiros, para que metadados legados incompletos possam ser mantidos; mas um gestor que submete o próprio artigo entra na regra como qualquer autor. Se a seção estiver marcada como \"Resumo não obrigatório\", o resumo continua opcional em todos os idiomas."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Idioma dos metadados"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "padrão da revista"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "No assistente de submissão, as abas dos idiomas exigidos são abertas automaticamente, para que o autor não receba um erro num campo que não está vendo."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Esta revista não tem idiomas de metadados de submissão configurados. Ative os idiomas em Configurações > Site/Revista > Idiomas antes de usar este plugin."
+
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Esta revista exige este campo também em {$language}."
+
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Obrigatório também em: {$languages}"

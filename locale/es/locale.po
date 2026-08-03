@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Metadatos Obligatorios en Varios Idiomas"
+
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Permite exigir el título y el resumen también en otros idiomas, además del idioma principal del envío. De forma predeterminada, OJS solo exige estos metadatos en el idioma elegido por la persona autora para el envío."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Marque en qué idiomas el título y el resumen pasan a ser obligatorios para completar un envío. La lista muestra los idiomas de metadatos activos en esta revista (Configuración > Idiomas)."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Cómo se aplica la regla"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "El idioma principal de cada envío ya es obligatorio en el propio OJS: marcarlo aquí no cambia nada. La exigencia se aplica a quien realiza el envío: los gestores y editores no quedan bloqueados al trabajar en envíos de terceros, de modo que los metadatos heredados incompletos puedan mantenerse; pero un gestor que envía su propio artículo queda sujeto a la regla como cualquier autor. Si la sección está marcada como «Resumen no obligatorio», el resumen sigue siendo opcional en todos los idiomas."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Idioma de los metadatos"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "predeterminado de la revista"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "En el asistente de envío, las pestañas de los idiomas exigidos se abren automáticamente, para que la persona autora no reciba un error en un campo que no está viendo."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Esta revista no tiene idiomas de metadatos de envío configurados. Actívelos en Configuración > Sitio web/Revista > Idiomas antes de usar este plugin."
+
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Esta revista también exige este campo en {$language}."
+
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "También obligatorio en: {$languages}"
