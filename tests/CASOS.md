@@ -33,6 +33,7 @@ obrigatórios usados no caso ponta a ponta.
 ## Convenções dos cenários
 
 - Revista: `Treinamento OJSBR`, idiomas de metadados `pt_BR`, `en_US`, `es@formal`.
+- Campos cobertos: título, resumo e — condicionalmente — palavras-chave (bloco K).
 - "Idioma da submissão" = `submissions.locale`, escolhido no passo 1 do assistente.
 - "Idioma extra" = idioma marcado na configuração do plugin.
 - Erros de `files` e `contributors` são ruído do ambiente e ficam fora das asserções, salvo
@@ -123,6 +124,34 @@ porque o núcleo escreve `$errors['title']` **antes** do hook.
 E09 e E10 existem justamente para travar essa invariante: se um upgrade do OJS mudar a ordem,
 os dois casos mudam de comportamento e a bateria acusa.
 
+## K — Palavras-chave (só quando a revista as exige)
+
+A regra do plugin só alcança as palavras-chave quando **Fluxo de Trabalho > Metadados >
+Palavras-chave = "Exigir"** (`journal_settings.keywords = 'require'`). Em qualquer outro
+ajuste o que estiver marcado na configuração fica guardado, mas não bloqueia ninguém.
+
+| # | Caso | Esperado |
+|---|---|---|
+| K01 | Revista em "Solicitar" + plugin configurado | Nenhum erro do plugin |
+| K02 | Revista em "Habilitar" | Nenhum erro do plugin |
+| K03 | Palavras-chave desabilitadas na revista | Nenhum erro do plugin |
+| K04 | Revista em "Exigir", plugin sem idioma | Só o núcleo cobra, no idioma da submissão |
+| K05 | Revista em "Exigir", plugin `en_US`, preenchido só em pt_BR | Cobra `en_US` |
+| K06 | Preenchido nos dois idiomas | Sem erro |
+| K07 | Lista vazia / lista só com espaços no idioma extra | Conta como vazio → bloqueia |
+| K08 | Configuração inclui o idioma da submissão | Ignorado, sem erro duplicado |
+| K09 | Dois idiomas extras | Um erro por idioma |
+| K10 | Erro nativo e do plugin no mesmo campo | Coexistem (`keywords.pt_BR` **e** `keywords.en_US`) |
+| K11 | Gestor em submissão de terceiro | **Isento** também nas palavras-chave |
+| K12 | Gestor designado como Autor | **Bloqueia** |
+| K13 | Plugin desabilitado | Volta à validação do núcleo |
+| K14 | Título, resumo e palavras-chave juntos | Os três cobrados no idioma extra |
+| K15 | `getApplicableFields()` acompanha o ajuste da revista | Com "Exigir" entram os três campos; sem, palavras-chave saem |
+
+> Ao contrário do resumo, as palavras-chave **não** sofrem a colisão de ordem descrita acima:
+> o núcleo escreve `$errors['keywords']` dentro do laço de `getRequiredMetadata()`, na classe
+> da PKP, **antes** do hook. Por isso K10 pode exigir os dois locales no mesmo campo.
+
 ## F — Interface
 
 | # | Caso | Esperado |
@@ -136,6 +165,10 @@ os dois casos mudam de comportamento e a bateria acusa.
 | F07 | Salvar pela tela persiste | Marcações refletem o que foi salvo ao reabrir |
 | F08 | Plugin desabilitado | Assistente volta ao normal (uma aba só) |
 | F09 | Escape de HTML no aviso | Sem injeção no `description` do campo |
+| F10 | Palavras-chave com a revista em "Exigir" | Aba aberta e aviso no campo `keywords` |
+| F11 | Palavras-chave com a revista em "Solicitar" | Sem aba extra e sem aviso |
+| F12 | Coluna de palavras-chave na tela de configuração | Presente sempre; esmaecida e com aviso quando a revista não exige |
+| F13 | Salvar palavras-chave pela tela | Persiste e reabre marcado |
 
 ## G — Robustez
 
@@ -150,12 +183,12 @@ os dois casos mudam de comportamento e a bateria acusa.
 
 ## Última execução
 
-OJS 3.5.0.3, treinamento.ojsbr.com, 03/08/2026:
+OJS 3.5.0.3, treinamento.ojsbr.com, 03/08/2026 (plugin 1.1.0.0):
 
 | Bateria | Resultado |
 |---|---|
-| `regressao.php` (A, B, C, D, E, G) | **45/45** |
-| `regressao_http.php` (F + E06) | **10/10** |
+| `regressao.php` (A, B, C, D, E, K, G) | **60/60** |
+| `regressao_http.php` (F + E06) | **14/14** |
 
 Rodadas duas vezes seguidas com o mesmo resultado e código de saída 0. Depois das duas,
 o servidor voltou ao estado inicial: nenhuma revista de teste, nenhum usuário `rmmtest_*`,
@@ -166,8 +199,8 @@ Os resultados por caso ficam em `tests/resultado.json` e `tests/resultado_http.j
 ## Cobertura declarada
 
 Cobre: leitura e gravação da configuração, filtragem de idiomas, a regra em todos os
-cruzamentos campo × idioma × papel, a interação com a seção, a coexistência com as validações
-nativas e a montagem da tela.
+cruzamentos campo × idioma × papel, a interação com a seção e com o ajuste de palavras-chave
+da revista, a coexistência com as validações nativas e a montagem da tela.
 
 **Não cobre** (e por quê): comportamento sob OMP/OPS (o plugin é OJS-only, usa
 `Section::getAbstractsNotRequired()`); tradução dos textos além de pt_BR/en/es; e o

@@ -1,13 +1,13 @@
 # Required Multilingual Metadata — OJS plugin
 
 [![OJS](https://img.shields.io/badge/OJS-3.5-brightgreen)](https://pkp.sfu.ca/ojs/)
-[![Version](https://img.shields.io/badge/version-1.0.0.0-blue)](version.xml)
+[![Version](https://img.shields.io/badge/version-1.1.0.0-blue)](version.xml)
 [![License](https://img.shields.io/badge/license-GPL--3.0-lightgrey)](LICENSE)
 
 A generic plugin for **Open Journal Systems (OJS)** that lets a journal require the
-**title** and the **abstract** in metadata languages **beyond the submission's own
-language** — something OJS 3.5 cannot do on its own — **without patching OJS core** and
-**without blocking editorial staff** working on legacy submissions.
+**title**, the **abstract** and the **keywords** in metadata languages **beyond the
+submission's own language** — something OJS 3.5 cannot do on its own — **without patching OJS
+core** and **without blocking editorial staff** working on legacy submissions.
 
 > **Developed and maintained by [OJSBR](https://ojsbr.com).** See the
 > [Credits & authorship](#credits--authorship) section below.
@@ -16,7 +16,7 @@ language** — something OJS 3.5 cannot do on its own — **without patching OJS
 
 | OJS version | Branch | Plugin release |
 |-------------|--------|----------------|
-| OJS 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.0.0.0 |
+| OJS 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.1.0.0 |
 
 ## Why it exists
 
@@ -42,7 +42,11 @@ There is no native setting to require the translation. That is what this plugin 
 ## What it does
 
 - **Per-journal settings screen**: one row per active metadata language, with an independent
-  checkbox for **Title** and for **Abstract**.
+  checkbox for **Title**, **Abstract** and **Keywords**.
+- **Keywords are conditional**: the rule only reaches them when the journal already makes
+  keywords mandatory (*Workflow → Metadata → Keywords = Require*). Under *Request*, *Enable*
+  or disabled, whatever is ticked in that column is kept but blocks no one — and the settings
+  screen says so.
 - On **Submit**, adds the errors for the selected languages, in the same shape the wizard
   already renders (`$errors['title']['en_US']`).
 - In the wizard, **opens the tabs** for the required languages and notes on the field which
@@ -58,6 +62,7 @@ There is no native setting to require the translation. That is what this plugin 
 | Manager/editor working on someone else's submission | **No** |
 | Editing metadata later in the editorial workflow (including incomplete legacy) | **No** |
 | Section set to "Abstract not required" | Abstract stays optional in every language |
+| Journal not set to *Keywords = Require* | Keywords stay optional in every language |
 
 The editorial exemption is deliberate: migrated archives usually have metadata missing, and
 the rule must not stop an editor from saving what is already there.
@@ -96,11 +101,13 @@ still displayed; the author simply sees the two messages in different rounds. Th
 affected, because the core writes `$errors['title']` **before** the hook.
 
 Cases `E09` and `E10` in the test suite lock this invariant down: if a future OJS release
-changes that order, the suite reports it.
+changes that order, the suite reports it. Keywords are **not** affected: the core writes
+`$errors['keywords']` inside the `getRequiredMetadata()` loop in the PKP class, before the
+hook, so both locales coexist there (case `K10`).
 
 ## Testing
 
-`tests/CASOS.md` (Portuguese) lists the full catalogue of 55 cases and what each suite covers.
+`tests/CASOS.md` (Portuguese) lists the full catalogue of 74 cases and what each suite covers.
 
 ```bash
 php plugins/generic/requiredMultilingualMetadata/tests/regressao.php
@@ -119,7 +126,7 @@ users and the submissions they create — and exit non-zero if any case fails. *
 test installation, never in production**: they create and delete submissions, a temporary
 journal and a temporary manager account.
 
-Last run on OJS 3.5.0.3: **45/45** and **10/10**.
+Last run on OJS 3.5.0.3: **60/60** and **14/14**.
 
 ## Installation
 

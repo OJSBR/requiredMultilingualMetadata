@@ -34,6 +34,13 @@
 		background:#fffbe9; border-radius:6px; line-height:1.5;
 	{rdelim}
 	.rmmNotice strong {ldelim} color:#6b5600; {rdelim}
+	.rmmNotice--info {ldelim} border-color:#b9d3e6; border-left-color:#3a6ea5; background:#f2f7fb; {rdelim}
+	.rmmNotice--info strong {ldelim} color:#20486e; {rdelim}
+	.rmmCheck--off {ldelim} opacity:.55; {rdelim}
+	.rmmOffTag {ldelim}
+		display:block; margin-top:.2em; font-size:.72em; font-weight:600; text-transform:uppercase;
+		letter-spacing:.04em; color:#8a5a00;
+	{rdelim}
 	.rmmHint {ldelim} color:#61707e; margin:.6em 0 0; font-size:.93em; line-height:1.5; {rdelim}
 </style>
 
@@ -55,12 +62,23 @@
 
 	{fbvFormArea id="requiredMultilingualMetadataArea"}
 		{if $localeRows}
+			{if !$keywordsRequired}
+				<div class="rmmNotice rmmNotice--info">
+					<strong>{translate key="plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"}</strong><br />
+					{translate key="plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"}
+				</div>
+			{/if}
+
 			<table class="rmmTable">
 				<thead>
 					<tr>
 						<th>{translate key="plugins.generic.requiredMultilingualMetadata.settings.column.language"}</th>
 						<th class="rmmCheck">{translate key="common.title"}</th>
 						<th class="rmmCheck">{translate key="common.abstract"}</th>
+						<th class="rmmCheck{if !$keywordsRequired} rmmCheck--off{/if}">
+							{translate key="common.keywords"}
+							{if !$keywordsRequired}<span class="rmmOffTag">{translate key="plugins.generic.requiredMultilingualMetadata.settings.inactive"}</span>{/if}
+						</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -95,6 +113,18 @@
 								/>
 								<label class="pkp_screen_reader" for="rmmAbstract-{$row.locale|escape}">
 									{translate key="common.abstract"} — {$row.name|escape}
+								</label>
+							</td>
+							<td class="rmmCheck{if !$keywordsRequired} rmmCheck--off{/if}">
+								<input
+									type="checkbox"
+									id="rmmKeywords-{$row.locale|escape}"
+									name="keywordsLocales[]"
+									value="{$row.locale|escape}"
+									{if $row.keywords}checked="checked"{/if}
+								/>
+								<label class="pkp_screen_reader" for="rmmKeywords-{$row.locale|escape}">
+									{translate key="common.keywords"} — {$row.name|escape}
 								</label>
 							</td>
 						</tr>

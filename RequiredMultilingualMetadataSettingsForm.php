@@ -83,18 +83,22 @@ class RequiredMultilingualMetadataSettingsForm extends Form
         // Uma linha por idioma de metadados ativo na revista.
         $rows = [];
         foreach ($this->plugin->getActiveLocales($this->context) as $locale) {
-            $rows[] = [
+            $linha = [
                 'locale' => $locale,
                 'name' => $this->plugin->getLocaleName($locale),
-                'title' => in_array($locale, $selected['title'], true),
-                'abstract' => in_array($locale, $selected['abstract'], true),
                 'isDefaultSubmissionLocale' => $locale === $this->context->getData('supportedDefaultSubmissionLocale'),
             ];
+            foreach (RequiredMultilingualMetadataPlugin::FIELDS as $field) {
+                $linha[$field] = in_array($locale, $selected[$field], true);
+            }
+            $rows[] = $linha;
         }
 
         $templateMgr->assign([
             'pluginName' => $this->plugin->getName(),
             'localeRows' => $rows,
+            // A coluna de palavras-chave só tem efeito se a revista as exigir.
+            'keywordsRequired' => $this->plugin->isKeywordsRequired($this->context),
         ]);
 
         return parent::fetch($request, $template, $display);

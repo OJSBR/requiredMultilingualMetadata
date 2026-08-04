@@ -41,3 +41,12 @@ msgstr "Esta revista también exige este campo en {$language}."
 
 msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
 msgstr "También obligatorio en: {$languages}"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "inactiva"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "La columna de palabras clave está inactiva"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Las palabras clave solo se exigen en los idiomas marcados aquí cuando la revista las hace obligatorias en Flujo de Trabajo > Metadatos > Palabras clave = «Exigir». Con cualquier otro ajuste, lo que esté marcado en esta columna se conserva, pero no bloquea a nadie."

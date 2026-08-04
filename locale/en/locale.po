@@ -41,3 +41,12 @@ msgstr "This journal also requires this field in {$language}."
 
 msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
 msgstr "Also required in: {$languages}"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "inactive"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "The keywords column is inactive"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Keywords are only required in the languages ticked here when the journal makes them mandatory under Workflow > Metadata > Keywords = \"Require\". Under any other setting, whatever is ticked in this column is kept but blocks no one."

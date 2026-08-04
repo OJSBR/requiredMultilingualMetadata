@@ -39,7 +39,7 @@ use PKP\stageAssignment\StageAssignment;
 class RequiredMultilingualMetadataPlugin extends GenericPlugin
 {
     /** Campos cobertos pelo plugin. Cada um tem sua própria lista de idiomas. */
-    public const FIELDS = ['title', 'abstract'];
+    public const FIELDS = ['title', 'abstract', 'keywords'];
 
     /** Template do assistente de submissão, onde as abas de idioma são abertas. */
     public const WIZARD_TEMPLATE = 'submission/wizard.tpl';
@@ -154,14 +154,9 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
 
         $submissionLocale = (string) $submission->getData('locale');
 
-        foreach (self::FIELDS as $field) {
-            if ($field === 'abstract' && !$this->isAbstractRequired($publication->getData('sectionId'), $context)) {
-                // Se a seção dispensa o resumo, ele continua opcional em todo idioma.
-                continue;
-            }
-
+        foreach ($this->getApplicableFields($context, $publication->getData('sectionId')) as $field) {
             foreach ($this->getEnforceableLocales($context, $field, $submissionLocale) as $locale) {
-                if (trim(strip_tags((string) $publication->getData($field, $locale))) !== '') {
+                if (!$this->isEmptyValue($publication->getData($field, $locale))) {
                     continue;
                 }
                 $errors[$field][$locale] = [
@@ -204,6 +199,65 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
             ->isNotEmpty();
 
         return !$isAuthorHere;
+    }
+
+    /**
+     * Campos em que a regra do plugin pode incidir agora, nesta revista e nesta seção.
+     *
+     * - título: sempre;
+     * - resumo: a não ser que a seção esteja marcada como "Resumo não obrigatório";
+     * - palavras-chave: SÓ quando a revista as exige (Fluxo de Trabalho > Metadados >
+     *   Palavras-chave = "Exigir"). Se estiverem como "Solicitar", "Habilitar" ou
+     *   desabilitadas, o plugin não encosta nelas, mesmo que haja idioma configurado.
+     *
+     * @return array<int, string>
+     */
+    public function getApplicableFields(Context $context, ?int $sectionId): array
+    {
+        return array_values(array_filter(
+            self::FIELDS,
+            fn (string $field): bool => match ($field) {
+                'abstract' => $this->isAbstractRequired($sectionId, $context),
+                'keywords' => $this->isKeywordsRequired($context),
+                default => true,
+            }
+        ));
+    }
+
+    /**
+     * A revista exige palavras-chave? (só 'require' conta; 'request' e 'enable' não)
+     */
+    public function isKeywordsRequired(Context $context): bool
+    {
+        return $context->getData('keywords') === Context::METADATA_REQUIRE;
+    }
+
+    /**
+     * Um metadado está vazio neste idioma?
+     *
+     * Título e resumo são texto; palavras-chave são vocabulário controlado, e voltam como
+     * lista de strings (ou null quando não há nenhuma). Uma lista só com strings em branco
+     * também conta como vazia.
+     */
+    private function isEmptyValue(mixed $value): bool
+    {
+        if ($value === null) {
+            return true;
+        }
+
+        if (is_array($value)) {
+            foreach ($value as $item) {
+                // O vocabulário controlado pode vir como string ou como entry-data.
+                $texto = is_array($item) ? ($item['name'] ?? '') : $item;
+                if (trim((string) $texto) !== '') {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        return trim(strip_tags((string) $value)) === '';
     }
 
     /**
@@ -270,10 +324,7 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
 
         // Idiomas exigidos por campo, já filtrados.
         $byField = [];
-        foreach (self::FIELDS as $field) {
-            if ($field === 'abstract' && !$this->isAbstractRequired($sectionId, $context)) {
-                continue;
-            }
+        foreach ($this->getApplicableFields($context, $sectionId) as $field) {
             $locales = $this->getEnforceableLocales($context, $field, $submissionLocale);
             if ($locales) {
                 $byField[$field] = $locales;

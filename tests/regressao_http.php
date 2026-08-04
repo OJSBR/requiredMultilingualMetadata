@@ -234,11 +234,21 @@ class Sessao
 //
 // Auxiliares
 //
-function configurar(array $titulo, array $resumo): void
+function configurar(array $titulo, array $resumo, array $palavrasChave = []): void
 {
     global $plugin;
     $plugin->updateSetting(CONTEXT_ID, 'titleLocales', $titulo, 'object');
     $plugin->updateSetting(CONTEXT_ID, 'abstractLocales', $resumo, 'object');
+    $plugin->updateSetting(CONTEXT_ID, 'keywordsLocales', $palavrasChave, 'object');
+}
+
+/** Muda Fluxo de Trabalho > Metadados > Palavras-chave e recarrega o contexto global. */
+function definirModoKeywords(string $modo): void
+{
+    global $context;
+    $context->setData('keywords', $modo);
+    Application::getContextDAO()->updateObject($context);
+    $context = Application::getContextDAO()->getById(CONTEXT_ID);
 }
 
 /** Formulário de título/resumo dentro do estado do assistente. */
@@ -270,6 +280,8 @@ function avisoDoCampo(array $form, string $campo): string
 $ORIGINAL = [
     'titleLocales' => $plugin->getSetting(CONTEXT_ID, 'titleLocales'),
     'abstractLocales' => $plugin->getSetting(CONTEXT_ID, 'abstractLocales'),
+    'keywordsLocales' => $plugin->getSetting(CONTEXT_ID, 'keywordsLocales'),
+    'keywords' => $context->getData('keywords'),
 ];
 $autor = Repo::user()->getByUsername(AUTOR);
 if (!$autor) {
@@ -446,28 +458,92 @@ try {
         }
     });
 
+    caso('F10', 'palavras-chave: aba e aviso quando a revista exige', function () use ($sessaoAutor, $PAGE, $sid) {
+        definirModoKeywords('require');
+        configurar([], [], ['en_US']);
+        $form = formTituloResumo($sessaoAutor->estado("{$PAGE}/pt_BR/submission?id={$sid}"));
+        igual(['pt_BR', 'en_US'], $form['visibleLocales'], 'aba do idioma exigido aberta');
+        ok(str_contains(avisoDoCampo($form, 'keywords'), 'rmmNotice'), 'palavras-chave deveriam ter aviso');
+        ok(!str_contains(avisoDoCampo($form, 'title'), 'rmmNotice'), 'titulo nao esta configurado, nao pode ter aviso');
+    });
+
+    caso('F11', 'palavras-chave: sem aviso quando a revista nao exige', function () use ($sessaoAutor, $PAGE, $sid) {
+        definirModoKeywords('request');
+        configurar([], [], ['en_US']);
+        $form = formTituloResumo($sessaoAutor->estado("{$PAGE}/pt_BR/submission?id={$sid}"));
+        igual(['pt_BR'], $form['visibleLocales'], 'sem exigencia da revista, nenhuma aba extra');
+        ok(!str_contains(avisoDoCampo($form, 'keywords'), 'rmmNotice'), 'nao pode haver aviso em palavras-chave');
+    });
+
+    caso('F12', 'tela de configuracao traz a coluna de palavras-chave e o aviso de inativa', function () use ($sessaoGestor, $GRID) {
+        $url = $GRID . '?verb=settings&plugin=' . PLUGIN . '&category=generic';
+
+        // Procura a DIV do aviso, nao a classe solta: o seletor CSS 'rmmNotice--info'
+        // aparece sempre no bloco <style> da tela.
+        $aviso = 'class="rmmNotice rmmNotice--info"';
+        $esmaecida = 'class="rmmCheck rmmCheck--off"';
+
+        definirModoKeywords('request');
+        $html = json_decode($sessaoGestor->get($url)['body'], true)['content'];
+        ok(str_contains($html, 'name="keywordsLocales[]"'), 'coluna de palavras-chave ausente');
+        ok(str_contains($html, $aviso), 'faltou o aviso de coluna inativa');
+        ok(str_contains($html, $esmaecida), 'a coluna deveria estar marcada como inativa');
+
+        definirModoKeywords('require');
+        $html2 = json_decode($sessaoGestor->get($url)['body'], true)['content'];
+        ok(str_contains($html2, 'name="keywordsLocales[]"'), 'coluna de palavras-chave ausente');
+        ok(!str_contains($html2, $aviso), 'com require nao pode haver aviso de inativa');
+        ok(!str_contains($html2, $esmaecida), 'com require a coluna nao pode estar esmaecida');
+    });
+
+    caso('F13', 'salvar palavras-chave pela tela persiste', function () use ($sessaoGestor, $GRID, $plugin) {
+        definirModoKeywords('require');
+        configurar([], [], []);
+        $url = $GRID . '?verb=settings&plugin=' . PLUGIN . '&category=generic';
+
+        $html = json_decode($sessaoGestor->get($url)['body'], true)['content'];
+        ok(preg_match('/name="csrfToken"\s+value="([^"]+)"/', $html, $m) === 1, 'csrf do form nao encontrado');
+
+        $salvar = $sessaoGestor->postForm($url . '&save=true', [
+            'csrfToken' => $m[1],
+            'titleLocales' => [],
+            'abstractLocales' => [],
+            'keywordsLocales' => ['en_US', 'es@formal'],
+        ]);
+        ok($salvar['code'] === 200, "salvar deveria devolver 200, veio {$salvar['code']}");
+        igual(['en_US', 'es@formal'], $plugin->getConfiguredLocales(CONTEXT_ID, 'keywords'), 'palavras-chave gravadas');
+
+        $html2 = json_decode($sessaoGestor->get($url)['body'], true)['content'];
+        ok(preg_match('/id="rmmKeywords-en_US"[^>]*checked/', $html2) === 1, 'en_US deveria reabrir marcado');
+    });
+
     //
     // ------------------------------------------------------------------ E06
     //
     bloco('E06 — Ponta a ponta');
 
     caso('E06', 'submissao completa com traducoes e aceita', function () use ($sessaoAutor, $API, $novaSubmissao) {
-        configurar(['en_US'], ['en_US']);
+        // pior caso: os tres metadados exigidos em en_US, com a revista exigindo palavras-chave
+        definirModoKeywords('require');
+        configurar(['en_US'], ['en_US'], ['en_US']);
         [$s, $p] = $novaSubmissao('pt_BR');
 
         // 1) so pt_BR: tem de barrar
         $sessaoAutor->api('PUT', "{$API}/submissions/{$s}/publications/{$p}", [
             'title' => ['pt_BR' => 'Titulo'],
             'abstract' => ['pt_BR' => '<p>Resumo</p>'],
+            'keywords' => ['pt_BR' => ['alfa', 'beta']],
         ]);
         $r1 = $sessaoAutor->api('PUT', "{$API}/submissions/{$s}/submit", ['_validateOnly' => true]);
         ok($r1['code'] === 400, 'deveria barrar sem a traducao');
         ok(isset($r1['json']['title']['en_US']), 'faltou o erro de titulo em en_US');
+        ok(isset($r1['json']['keywords']['en_US']), 'faltou o erro de palavras-chave em en_US');
 
         // 2) com traducao + arquivos: tem de passar
         $sessaoAutor->api('PUT', "{$API}/submissions/{$s}/publications/{$p}", [
             'title' => ['pt_BR' => 'Titulo', 'en_US' => 'Title'],
             'abstract' => ['pt_BR' => '<p>Resumo</p>', 'en_US' => '<p>Abstract</p>'],
+            'keywords' => ['pt_BR' => ['alfa', 'beta'], 'en_US' => ['alpha', 'beta']],
         ]);
         foreach ([1 => 'artigo.txt', 13 => 'etica.txt'] as $genero => $nome) {
             $tmp = sys_get_temp_dir() . '/' . $nome;
@@ -504,9 +580,13 @@ bloco('RESTAURACAO');
 
 $plugin->updateSetting(CONTEXT_ID, 'titleLocales', $ORIGINAL['titleLocales'] ?? [], 'object');
 $plugin->updateSetting(CONTEXT_ID, 'abstractLocales', $ORIGINAL['abstractLocales'] ?? [], 'object');
+$plugin->updateSetting(CONTEXT_ID, 'keywordsLocales', $ORIGINAL['keywordsLocales'] ?? [], 'object');
 $plugin->updateSetting(CONTEXT_ID, 'enabled', true, 'bool');
+definirModoKeywords((string) $ORIGINAL['keywords']);
 echo '  config do plugin restaurada: title=' . json_encode($plugin->getConfiguredLocales(CONTEXT_ID, 'title'))
-    . ' abstract=' . json_encode($plugin->getConfiguredLocales(CONTEXT_ID, 'abstract')) . "\n";
+    . ' abstract=' . json_encode($plugin->getConfiguredLocales(CONTEXT_ID, 'abstract'))
+    . ' keywords=' . json_encode($plugin->getConfiguredLocales(CONTEXT_ID, 'keywords')) . "\n";
+echo '  revista: keywords=' . var_export($ORIGINAL['keywords'], true) . "\n";
 
 DB::table('users')->where('user_id', $autor->getId())->update(['password' => $hashOriginal]);
 echo '  senha original de ' . AUTOR . " restaurada\n";

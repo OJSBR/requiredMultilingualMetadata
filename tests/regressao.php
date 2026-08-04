@@ -175,11 +175,24 @@ function errosMeta(Submission $submission, ?int $userId): array
     return $out;
 }
 
-function configurar(array $titulo, array $resumo): void
+function configurar(array $titulo, array $resumo, array $palavrasChave = []): void
 {
     global $plugin;
     $plugin->updateSetting(CONTEXT_ID, 'titleLocales', $titulo, 'object');
     $plugin->updateSetting(CONTEXT_ID, 'abstractLocales', $resumo, 'object');
+    $plugin->updateSetting(CONTEXT_ID, 'keywordsLocales', $palavrasChave, 'object');
+}
+
+/**
+ * Muda Fluxo de Trabalho > Metadados > Palavras-chave e recarrega o contexto global,
+ * porque é o objeto que a validação recebe.
+ */
+function definirModoKeywords(string $modo): void
+{
+    global $context;
+    $context->setData('keywords', $modo);
+    Application::getContextDAO()->updateObject($context);
+    $context = Application::getContextDAO()->getById(CONTEXT_ID);
 }
 
 /** Papel temporário para um usuário nesta revista; devolve o id da linha criada. */
@@ -202,6 +215,7 @@ function tirarPapel(int $rowId): void
 $ORIGINAL = [
     'titleLocales' => $plugin->getSetting(CONTEXT_ID, 'titleLocales'),
     'abstractLocales' => $plugin->getSetting(CONTEXT_ID, 'abstractLocales'),
+    'keywordsLocales' => $plugin->getSetting(CONTEXT_ID, 'keywordsLocales'),
     'keywords' => $context->getData('keywords'),
     'metadataLocales' => $context->getSupportedSubmissionMetadataLocales(),
     'abstractsNotRequired' => (int) DB::table('sections')->where('section_id', SECTION_ID)->value('abstracts_not_required'),
@@ -617,6 +631,153 @@ try {
     });
 
     //
+    // ------------------------------------------------------------------ K
+    //
+    bloco('K — Palavras-chave (so quando a revista as exige)');
+
+    /** Cria uma submissao com titulo e resumo prontos, variando so as palavras-chave. */
+    $subKeywords = function (array $keywords = []): Submission {
+        [$s, $p] = novaSubmissao('pt_BR');
+        $props = ['title' => ['pt_BR' => 'T', 'en_US' => 'T'], 'abstract' => ['pt_BR' => '<p>R</p>', 'en_US' => '<p>A</p>']];
+        if ($keywords) {
+            $props['keywords'] = $keywords;
+        }
+        definirMetadados($p, $props);
+
+        return recarregar($s);
+    };
+
+    caso('K01', "revista em 'request': plugin nao encosta nas palavras-chave", function () use ($subKeywords) {
+        definirModoKeywords('request');
+        configurar([], [], ['en_US']);
+        igual([], errosMeta($subKeywords(['pt_BR' => ['alfa']]), 2), 'sem exigencia da revista, nada e cobrado');
+    });
+
+    caso('K02', "revista em 'enable': idem", function () use ($subKeywords) {
+        definirModoKeywords('enable');
+        configurar([], [], ['en_US']);
+        igual([], errosMeta($subKeywords(['pt_BR' => ['alfa']]), 2), 'enable nao e require');
+    });
+
+    caso('K03', 'palavras-chave desabilitadas na revista: idem', function () use ($subKeywords) {
+        definirModoKeywords('0');
+        configurar([], [], ['en_US']);
+        igual([], errosMeta($subKeywords(), 2), 'desabilitado nao pode cobrar nada');
+    });
+
+    caso('K04', "revista em 'require' e plugin sem idioma: so o nucleo cobra", function () use ($subKeywords) {
+        definirModoKeywords('require');
+        configurar([], [], []);
+        igual(['keywords' => ['pt_BR']], errosMeta($subKeywords(), 2), 'so o idioma da submissao');
+    });
+
+    caso('K05', "revista em 'require' e plugin en_US: cobra a traducao", function () use ($subKeywords) {
+        definirModoKeywords('require');
+        configurar([], [], ['en_US']);
+        igual(['keywords' => ['en_US']], errosMeta($subKeywords(['pt_BR' => ['alfa', 'beta']]), 2), 'falta en_US');
+    });
+
+    caso('K06', 'preenchido nos dois idiomas: sem erro', function () use ($subKeywords) {
+        definirModoKeywords('require');
+        configurar([], [], ['en_US']);
+        igual([], errosMeta($subKeywords(['pt_BR' => ['alfa'], 'en_US' => ['alpha']]), 2), 'nada a cobrar');
+    });
+
+    caso('K07', 'lista vazia e lista so com espacos contam como vazio', function () use ($subKeywords) {
+        definirModoKeywords('require');
+        configurar([], [], ['en_US']);
+        igual(['keywords' => ['en_US']], errosMeta($subKeywords(['pt_BR' => ['alfa'], 'en_US' => []]), 2), 'lista vazia nao preenche');
+        igual(['keywords' => ['en_US']], errosMeta($subKeywords(['pt_BR' => ['alfa'], 'en_US' => ['   ', '']]), 2), 'so espacos nao preenche');
+    });
+
+    caso('K08', 'idioma da submissao na configuracao e ignorado', function () use ($subKeywords) {
+        definirModoKeywords('require');
+        configurar([], [], ['pt_BR', 'en_US']);
+        igual(
+            ['keywords' => ['en_US']],
+            errosMeta($subKeywords(['pt_BR' => ['alfa']]), 2),
+            'pt_BR ja preenchido nao pode gerar erro duplicado'
+        );
+    });
+
+    caso('K09', 'dois idiomas extras exigidos', function () use ($subKeywords) {
+        definirModoKeywords('require');
+        configurar([], [], ['en_US', 'es@formal']);
+        igual(
+            ['keywords' => ['en_US', 'es@formal']],
+            errosMeta($subKeywords(['pt_BR' => ['alfa']]), 2),
+            'um erro por idioma'
+        );
+    });
+
+    caso('K10', 'erro nativo e do plugin coexistem em keywords', function () use ($subKeywords) {
+        definirModoKeywords('require');
+        configurar([], [], ['en_US']);
+        // nada preenchido: nucleo cobra pt_BR (escreve antes do hook) e plugin cobra en_US
+        igual(['keywords' => ['en_US', 'pt_BR']], errosMeta($subKeywords(), 2), 'os dois locales');
+    });
+
+    caso('K11', 'gestor em submissao de terceiro: isento tambem nas palavras-chave', function () use ($subKeywords) {
+        definirModoKeywords('require');
+        configurar([], [], ['en_US']);
+        igual([], errosMeta($subKeywords(['pt_BR' => ['alfa']]), 1), 'gestor nao pode ser bloqueado');
+    });
+
+    caso('K12', 'gestor designado como Autor: bloqueia', function () use ($subKeywords) {
+        definirModoKeywords('require');
+        configurar([], [], ['en_US']);
+        $s = $subKeywords(['pt_BR' => ['alfa']]);
+        Repo::stageAssignment()->build($s->getId(), UG_AUTOR, 1, false, true);
+        $r = errosMeta($s, 1);
+        DB::table('stage_assignments')->where('submission_id', $s->getId())->where('user_id', 1)->delete();
+        igual(['keywords' => ['en_US']], $r, 'gestor-autor tem de ser bloqueado');
+    });
+
+    caso('K13', 'plugin desabilitado: volta a validacao do nucleo', function () use ($subKeywords, $plugin) {
+        definirModoKeywords('require');
+        configurar([], [], ['en_US']);
+        $s = $subKeywords(['pt_BR' => ['alfa']]);
+
+        $comPlugin = errosMeta($s, 2);
+        Hook::clear('Submission::validateSubmit');
+        $semPlugin = errosMeta($s, 2);
+        Hook::add('Submission::validateSubmit', [$plugin, 'validateSubmit']);
+
+        igual(['keywords' => ['en_US']], $comPlugin, 'com plugin deveria cobrar');
+        igual([], $semPlugin, 'sem plugin nao pode cobrar nada');
+    });
+
+    caso('K14', 'titulo, resumo e palavras-chave juntos', function () {
+        definirModoKeywords('require');
+        configurar(['en_US'], ['en_US'], ['en_US']);
+        [$s, $p] = novaSubmissao('pt_BR');
+        definirMetadados($p, [
+            'title' => ['pt_BR' => 'T'],
+            'abstract' => ['pt_BR' => '<p>R</p>'],
+            'keywords' => ['pt_BR' => ['alfa']],
+        ]);
+        igual(
+            ['abstract' => ['en_US'], 'keywords' => ['en_US'], 'title' => ['en_US']],
+            errosMeta(recarregar($s), 2),
+            'os tres campos cobrados em en_US'
+        );
+    });
+
+    caso('K15', 'campos aplicaveis mudam com o ajuste da revista', function () use ($plugin) {
+        // Recarrega o contexto a cada troca: o objeto e imutavel para quem ja o tinha em maos.
+        definirModoKeywords('require');
+        $ctx = Application::getContextDAO()->getById(CONTEXT_ID);
+        igual(['title', 'abstract', 'keywords'], $plugin->getApplicableFields($ctx, SECTION_ID), 'com require entram os tres');
+
+        definirModoKeywords('request');
+        $ctx = Application::getContextDAO()->getById(CONTEXT_ID);
+        igual(['title', 'abstract'], $plugin->getApplicableFields($ctx, SECTION_ID), 'sem require, palavras-chave saem');
+    });
+
+    definirModoKeywords($ORIGINAL['keywords']);
+    configurar(['en_US'], ['en_US'], []);
+
+    //
     // ------------------------------------------------------------------ G
     //
     bloco('G — Robustez');
@@ -695,8 +856,10 @@ echo "\n" . str_repeat('=', 78) . "\nRESTAURACAO\n" . str_repeat('=', 78) . "\n"
 
 $plugin->updateSetting(CONTEXT_ID, 'titleLocales', $ORIGINAL['titleLocales'] ?? [], 'object');
 $plugin->updateSetting(CONTEXT_ID, 'abstractLocales', $ORIGINAL['abstractLocales'] ?? [], 'object');
-echo "  config do plugin restaurada: title=" . json_encode($plugin->getConfiguredLocales(CONTEXT_ID, 'title'))
-    . ' abstract=' . json_encode($plugin->getConfiguredLocales(CONTEXT_ID, 'abstract')) . "\n";
+$plugin->updateSetting(CONTEXT_ID, 'keywordsLocales', $ORIGINAL['keywordsLocales'] ?? [], 'object');
+echo '  config do plugin restaurada: title=' . json_encode($plugin->getConfiguredLocales(CONTEXT_ID, 'title'))
+    . ' abstract=' . json_encode($plugin->getConfiguredLocales(CONTEXT_ID, 'abstract'))
+    . ' keywords=' . json_encode($plugin->getConfiguredLocales(CONTEXT_ID, 'keywords')) . "\n";
 
 $ctx = Application::getContextDAO()->getById(CONTEXT_ID);
 $ctx->setData('keywords', $ORIGINAL['keywords']);
