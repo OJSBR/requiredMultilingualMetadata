@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Metadati obbligatori in più lingue"
+
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Consente di richiedere titolo, abstract e parole chiave anche in altre lingue, oltre alla lingua principale della proposta. Per impostazione predefinita OJS verifica questi metadati soltanto nella lingua scelta dall'autore per la proposta."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Selezioni le lingue in cui titolo, abstract e parole chiave devono essere compilati perché una proposta possa essere completata. L'elenco mostra le lingue dei metadati attive in questa rivista (Impostazioni > Lingue)."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Come viene applicata la regola"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "La lingua principale di ogni proposta è già obbligatoria in OJS stesso: selezionarla qui non cambia nulla. Il vincolo vale per chi sta inviando la proposta: i responsabili della rivista e i redattori non vengono bloccati quando lavorano sulla proposta di altri, così da poter conservare metadati pregressi incompleti; chi invece invia il proprio articolo è soggetto alla regola come qualsiasi autore. Se la sezione è impostata su «Abstract non obbligatorio», l'abstract resta facoltativo in tutte le lingue."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Lingua dei metadati"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "predefinita della rivista"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "Nella procedura guidata di proposta le schede delle lingue richieste vengono aperte automaticamente, così l'autore non riceve mai un errore su un campo che non sta vedendo."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Questa rivista non ha lingue dei metadati di proposta configurate. Le attivi in Impostazioni > Sito web/Rivista > Lingue prima di usare questo plugin."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "inattiva"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "La colonna «Parole chiave» è inattiva"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Le parole chiave sono richieste nelle lingue selezionate qui solo quando la rivista le rende obbligatorie in Flusso di lavoro > Metadati > Parole chiave = «Richiedi». Con qualsiasi altra impostazione, quanto selezionato in questa colonna viene conservato ma non blocca nessuno."
+
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Questa rivista richiede questo campo anche in {$language}."
+
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Obbligatorio anche in: {$languages}"

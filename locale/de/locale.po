@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Pflichtmetadaten in mehreren Sprachen"
+
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Ermöglicht es, Titel, Zusammenfassung und Schlagwörter auch in weiteren Sprachen verbindlich zu verlangen, über die Hauptsprache der Einreichung hinaus. Standardmäßig prüft OJS diese Metadaten nur in der Sprache, die die einreichende Person für die Einreichung gewählt hat."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Wählen Sie aus, in welchen Sprachen Titel, Zusammenfassung und Schlagwörter ausgefüllt sein müssen, damit eine Einreichung abgeschlossen werden kann. Aufgeführt sind die in dieser Zeitschrift aktiven Metadatensprachen (Einstellungen > Sprachen)."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Wie die Regel angewendet wird"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Die Hauptsprache jeder Einreichung verlangt OJS bereits selbst — sie hier zu markieren ändert nichts. Die Anforderung gilt für die einreichende Person: Zeitschriftenverwaltung und Redaktion werden bei fremden Einreichungen nicht blockiert, damit unvollständige Altmetadaten erhalten bleiben können; wer jedoch den eigenen Beitrag einreicht, unterliegt der Regel wie jede Autorin und jeder Autor. Ist die Rubrik als „Zusammenfassung nicht erforderlich“ gekennzeichnet, bleibt die Zusammenfassung in allen Sprachen optional."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Metadatensprache"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "Standard der Zeitschrift"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "Im Einreichungsassistenten werden die Reiter der verlangten Sprachen automatisch geöffnet, damit keine Fehlermeldung zu einem Feld erscheint, das nicht sichtbar ist."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Für diese Zeitschrift sind keine Metadatensprachen für Einreichungen konfiguriert. Aktivieren Sie sie unter Einstellungen > Website/Zeitschrift > Sprachen, bevor Sie dieses Plugin verwenden."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "inaktiv"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Die Spalte „Schlagwörter“ ist inaktiv"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Schlagwörter werden in den hier markierten Sprachen nur dann verlangt, wenn die Zeitschrift sie unter Workflow > Metadaten > Schlagwörter = „Erforderlich“ verbindlich macht. Bei jeder anderen Einstellung bleibt die Auswahl in dieser Spalte gespeichert, blockiert aber niemanden."
+
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Diese Zeitschrift verlangt dieses Feld auch auf {$language}."
+
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Auch erforderlich auf: {$languages}"

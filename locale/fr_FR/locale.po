@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_FR\n"
+
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Métadonnées obligatoires en plusieurs langues"
+
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Permet d'exiger le titre, le résumé et les mots-clés également dans d'autres langues, au-delà de la langue principale de la soumission. Par défaut, OJS ne contrôle ces métadonnées que dans la langue choisie par l'auteur-e pour la soumission."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Cochez les langues dans lesquelles le titre, le résumé et les mots-clés doivent être renseignés pour qu'une soumission puisse être achevée. La liste présente les langues de métadonnées actives dans cette revue (Paramètres > Langues)."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Comment la règle s'applique"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "La langue principale de chaque soumission est déjà exigée par OJS lui-même : la cocher ici ne change rien. L'exigence s'applique à la personne qui soumet : les directeurs-trices et rédacteurs-trices ne sont pas bloqué-e-s lorsqu'ils travaillent sur la soumission d'autrui, afin que des métadonnées héritées incomplètes puissent être conservées ; en revanche, celui ou celle qui soumet son propre article est soumis-e à la règle comme tout-e auteur-e. Si la rubrique est marquée « Résumé non obligatoire », le résumé reste facultatif dans toutes les langues."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Langue des métadonnées"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "par défaut pour la revue"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "Dans l'assistant de soumission, les onglets des langues exigées sont ouverts automatiquement, afin que l'auteur-e ne reçoive jamais d'erreur sur un champ qu'il ou elle ne voit pas."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Aucune langue de métadonnées de soumission n'est configurée pour cette revue. Activez-les dans Paramètres > Site web/Revue > Langues avant d'utiliser ce plugiciel."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "inactive"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "La colonne « Mots-clés » est inactive"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Les mots-clés ne sont exigés dans les langues cochées ici que lorsque la revue les rend obligatoires dans Flux des travaux > Métadonnées > Mots-clés = « Exiger ». Avec tout autre réglage, ce qui est coché dans cette colonne est conservé mais ne bloque personne."
+
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Cette revue exige également ce champ en {$language}."
+
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Également obligatoire en : {$languages}"

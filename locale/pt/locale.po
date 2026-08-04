@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt\n"
+
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Metadados Obrigatórios em Vários Idiomas"
+
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Permite exigir o título, o resumo e as palavras-chave também noutros idiomas, além do idioma principal da submissão. Por predefinição, o OJS só verifica estes metadados no idioma escolhido pelo autor para a submissão."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Assinale em que idiomas o título, o resumo e as palavras-chave passam a ser obrigatórios para concluir uma submissão. A lista mostra os idiomas de metadados activos nesta revista (Configurações > Idiomas)."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Como a regra é aplicada"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "O idioma principal de cada submissão já é obrigatório no próprio OJS — assinalá-lo aqui não muda nada. A exigência aplica-se a quem está a submeter: gestores e editores não são bloqueados ao trabalhar em submissões de terceiros, para que metadados antigos incompletos possam ser mantidos; mas quem submete o próprio artigo fica sujeito à regra como qualquer autor. Se a secção estiver marcada como \"Resumo não obrigatório\", o resumo continua opcional em todos os idiomas."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Idioma dos metadados"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "predefinido da revista"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "No assistente de submissão, os separadores dos idiomas exigidos são abertos automaticamente, para que o autor não receba um erro num campo que não está a ver."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Esta revista não tem idiomas de metadados de submissão configurados. Active os idiomas em Configurações > Site/Revista > Idiomas antes de usar este plug-in."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "inactiva"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "A coluna de palavras-chave está inactiva"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "As palavras-chave só são exigidas nos idiomas assinalados aqui quando a revista as torna obrigatórias em Fluxo de Trabalho > Metadados > Palavras-chave = \"Exigir\". Com qualquer outra definição, o que estiver assinalado nesta coluna fica guardado, mas não bloqueia ninguém."
+
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Esta revista exige este campo também em {$language}."
+
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Obrigatório também em: {$languages}"

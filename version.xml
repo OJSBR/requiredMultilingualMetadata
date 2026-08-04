@@ -12,7 +12,7 @@
 <version>
 	<application>requiredMultilingualMetadata</application>
 	<type>plugins.generic</type>
-	<release>1.1.0.0</release>
+	<release>1.1.0.1</release>
 	<date>2026-08-04</date>
 	<lazy-load>1</lazy-load>
 	<sitewide>0</sitewide>
