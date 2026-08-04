@@ -22,6 +22,14 @@ Ambos **restauram tudo o que tocam** (configuração do plugin, seção, idiomas
 senhas, usuários e submissões criadas) e imprimem PASS/FAIL por caso, com código de saída
 diferente de zero se algo falhar.
 
+> **Rode só em instalação de teste.** As baterias criam e apagam submissões, uma revista
+> temporária e um gestor temporário, e trocam (restaurando depois) a senha do autor de teste.
+
+As constantes do topo de cada arquivo são do ambiente de referência e precisam ser ajustadas
+para outra instalação: `CONTEXT_ID`, `SECTION_ID`, o grupo de Autor (`UG_AUTOR`) e o de Gestor
+(`UG_GESTOR`), o login do autor de teste (`AUTOR`), e os ids dos gêneros de arquivo
+obrigatórios usados no caso ponta a ponta.
+
 ## Convenções dos cenários
 
 - Revista: `Treinamento OJSBR`, idiomas de metadados `pt_BR`, `en_US`, `es@formal`.
