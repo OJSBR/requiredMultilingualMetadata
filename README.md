@@ -4,6 +4,8 @@
 [![Version](https://img.shields.io/badge/version-1.1.0.0-blue)](version.xml)
 [![License](https://img.shields.io/badge/license-GPL--3.0-lightgrey)](LICENSE)
 
+**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/requiredMultilingualMetadata/releases/download/1.1.0.0/requiredMultilingualMetadata-1.1.0.0.tar.gz) — or browse all [Releases](../../releases).
+
 A generic plugin for **Open Journal Systems (OJS)** that lets a journal require the
 **title**, the **abstract** and the **keywords** in metadata languages **beyond the
 submission's own language** — something OJS 3.5 cannot do on its own — **without patching OJS
