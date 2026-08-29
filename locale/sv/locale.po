@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: sv\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Obligatoriska flerspråkiga metadata"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Låter tidskriften kräva titel och sammanfattning på ytterligare språk, utöver bidragets primära språk. Som standard kräver OJS dessa metadata endast på det språk som författaren valde för bidraget."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Välj de språk där titel och sammanfattning måste fyllas i för att ett bidrag ska kunna slutföras. Listan visar de språk för bidragsmetadata som är aktiverade för den här tidskriften (Inställningar > Språk)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Så tillämpas regeln"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Varje bidrags primära språk krävs redan av OJS självt – att markera det här ändrar ingenting. Kravet gäller den som skickar in: tidskriftsansvariga och redaktörer blockeras inte när de arbetar med någon annans bidrag, så ofullständiga äldre metadata kan behållas; men en ansvarig som skickar in sin egen artikel omfattas av regeln som vilken författare som helst. Om sektionen är inställd på ”Sammanfattning krävs inte” förblir sammanfattningen frivillig på alla språk."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Metadataspråk"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "tidskriftens standard"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "I inskickningsguiden öppnas flikarna för de obligatoriska språken automatiskt, så att författaren aldrig får ett fel för ett fält som hen inte ser."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Den här tidskriften har inga språk för bidragsmetadata konfigurerade. Aktivera dem under Inställningar > Webbplats/Tidskrift > Språk innan du använder tillägget."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Den här tidskriften kräver fältet även på {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Krävs även på: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "inaktiv"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Nyckelordskolumnen är inaktiv"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Nyckelord krävs på de språk som markerats här endast när tidskriften gör dem obligatoriska under Arbetsflöde > Metadata > Nyckelord = ”Krävs”. Vid alla andra inställningar behålls markeringarna i den här kolumnen men blockerar ingen."

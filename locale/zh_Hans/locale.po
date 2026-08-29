@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: zh_Hans\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "必填的多语言元数据"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "允许期刊在投稿主要语言之外，要求以更多语言填写标题和摘要。默认情况下，OJS 只要求以作者为该投稿所选的语言填写这些元数据。"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "选择必须填写标题和摘要才能完成投稿的语言。列表显示本期刊已启用的投稿元数据语言（设置 > 语言）。"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "规则如何生效"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "每篇投稿的主要语言本来就是 OJS 自身要求的——在此勾选不会有任何改变。该要求针对提交者：期刊管理员和编辑在处理他人投稿时不会被拦下，因此旧有的不完整元数据得以保留；但管理员提交自己的文章时，与任何作者一样受此规则约束。若栏目设置为“无需摘要”，则摘要在所有语言中仍为可选。"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "元数据语言"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "期刊默认"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "在投稿向导中，必填语言的选项卡会自动展开，因此作者不会因为看不见的字段而收到错误提示。"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "本期刊尚未配置投稿元数据语言。使用本插件前，请在“设置 > 网站/期刊 > 语言”中启用。"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "本期刊还要求以 {$language} 填写此字段。"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "以下语言同样必填：{$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "未启用"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "关键词列未启用"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "只有当期刊在“工作流程 > 元数据 > 关键词 = 必填”中设为必填时，此处勾选的语言才要求填写关键词。在其他任何设置下，本列的勾选会保留，但不会阻拦任何人。"

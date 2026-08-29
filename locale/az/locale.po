@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: az\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Tələb olunan çoxdilli metaməlumat"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Jurnala imkan verir ki, başlıq və xülasəni təqdimatın əsas dilindən əlavə başqa dillərdə də tələb etsin. Standart olaraq OJS bu metaməlumatları yalnız müəllifin təqdimat üçün seçdiyi dildə tələb edir."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Təqdimatın tamamlanması üçün başlıq və xülasənin hansı dillərdə doldurulmalı olduğunu seçin. Siyahıda bu jurnal üçün aktiv olan təqdimat metaməlumat dilləri göstərilir (Parametrlər > Dillər)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Qayda necə tətbiq olunur"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Hər təqdimatın əsas dili onsuz da OJS tərəfindən tələb olunur — burada onu seçmək heç nəyi dəyişmir. Tələb təqdim edən şəxsə aiddir: jurnal menecerləri və redaktorlar başqasının təqdimatı üzərində işləyərkən dayandırılmır, ona görə köhnə natamam metaməlumatlar saxlanıla bilir; lakin öz məqaləsini təqdim edən menecer də hər müəllif kimi qaydaya tabedir. Bölmə \"Xülasə tələb olunmur\" olaraq qurulubsa, xülasə bütün dillərdə könüllü qalır."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Metaməlumat dili"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "jurnalın standartı"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "Təqdimat sehrbazında tələb olunan dillərin sekmeleri avtomatik açılır, ona görə müəllifə görə bilmədiyi sahə üçün heç vaxt xəta göstərilmir."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Bu jurnalda təqdimat metaməlumatlarının dilləri təyin edilməyib. Bu plaginə başlamazdan əvvəl onları Parametrlər > Sayt/Jurnal > Dillər bölməsində aktivləşdirin."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Bu jurnal həmin sahəni {$language} dilində də tələb edir."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Həmçinin tələb olunur: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "qeyri-aktiv"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Açar sözlər sütunu qeyri-aktivdir"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Açar sözlər burada seçilmiş dillərdə yalnız o halda tələb olunur ki, jurnal onları İş axını > Metaməlumatlar > Açar sözlər = \"Tələb olunur\" ilə məcburi etsin. Başqa hər parametrdə bu sütunda seçilənlər saxlanılır, lakin heç kimi dayandırmır."

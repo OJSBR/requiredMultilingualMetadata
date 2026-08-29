@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: pl\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Wymagane metadane wielojęzyczne"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Pozwala czasopismu wymagać tytułu i abstraktu w dodatkowych językach, poza podstawowym językiem zgłoszenia. Domyślnie OJS wymaga tych metadanych tylko w języku, który autor wybrał dla zgłoszenia."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Wybierz języki, w których trzeba wypełnić tytuł i abstrakt, aby zgłoszenie mogło zostać ukończone. Lista pokazuje języki metadanych zgłoszeń włączone w tym czasopiśmie (Ustawienia > Języki)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Jak stosowana jest reguła"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Podstawowego języka każdego zgłoszenia wymaga już sam OJS — zaznaczenie go tutaj niczego nie zmienia. Wymóg dotyczy osoby zgłaszającej: menedżerowie czasopisma i redaktorzy nie są blokowani podczas pracy nad cudzym zgłoszeniem, dzięki czemu można zachować niepełne dawne metadane; ale menedżer zgłaszający własny artykuł podlega regule jak każdy autor. Jeśli dział jest ustawiony na „Abstrakt niewymagany”, abstrakt pozostaje opcjonalny we wszystkich językach."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Język metadanych"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "domyślne dla czasopisma"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "W kreatorze zgłoszenia karty wymaganych języków otwierają się automatycznie, więc autor nigdy nie zobaczy błędu dotyczącego pola, którego nie widzi."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "To czasopismo nie ma skonfigurowanych języków metadanych zgłoszeń. Włącz je w Ustawienia > Witryna/Czasopismo > Języki, zanim użyjesz tej wtyczki."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "To czasopismo wymaga tego pola także w języku {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Wymagane także w: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "nieaktywny"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Kolumna słów kluczowych jest nieaktywna"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Słowa kluczowe są wymagane w zaznaczonych tu językach tylko wtedy, gdy czasopismo czyni je obowiązkowymi w Przepływ pracy > Metadane > Słowa kluczowe = „Wymagane”. Przy każdym innym ustawieniu zaznaczenia w tej kolumnie są zachowywane, ale nikogo nie blokują."

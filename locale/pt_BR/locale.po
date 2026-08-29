@@ -9,6 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
 
+
 msgid "plugins.generic.requiredMultilingualMetadata.displayName"
 msgstr "Metadados Obrigatórios em Vários Idiomas"
 

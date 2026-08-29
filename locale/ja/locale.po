@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: ja\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "多言語メタデータの必須化"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "投稿の主要言語に加えて、他の言語でも表題と抄録を必須にできるようにします。既定の OJS は、著者が投稿に選んだ言語でしかこれらのメタデータを必須にしません。"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "投稿を完了するために、表題と抄録の入力を必須とする言語を選びます。一覧には、このジャーナルで有効な投稿メタデータの言語が表示されます（設定 > 言語）。"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "ルールの適用方法"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "各投稿の主要言語は OJS 本体がすでに必須にしています。ここで選んでも何も変わりません。この必須化は投稿する人に適用されます。ジャーナル管理者や編集者が他人の投稿を扱う場合は妨げられないため、過去の不完全なメタデータはそのまま保持できます。ただし、自分の論文を投稿する管理者は、他の著者と同じくルールの対象です。セクションが「抄録は不要」に設定されている場合、抄録はすべての言語で任意のままです。"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "メタデータの言語"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "ジャーナルの既定"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "投稿ウィザードでは必須言語のタブが自動的に開かれるため、著者が見えない項目についてエラーを示されることはありません。"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "このジャーナルには投稿メタデータの言語が設定されていません。本プラグインを使う前に「設定 > ウェブサイト／ジャーナル > 言語」で有効にしてください。"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "このジャーナルでは、この項目を {$language} でも入力する必要があります。"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "次の言語でも必須です: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "無効"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "キーワード列は無効です"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "ここでチェックした言語でキーワードが必須になるのは、ジャーナルが「ワークフロー > メタデータ > キーワード = 必須」に設定している場合だけです。それ以外の設定では、この列のチェックは保存されますが、誰の入力も妨げません。"

@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: fi\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Pakolliset monikieliset metatiedot"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Antaa lehden vaatia otsikon ja tiivistelmän myös muilla kielillä kuin käsikirjoituksen ensisijaisella kielellä. Oletuksena OJS vaatii nämä metatiedot vain sillä kielellä, jonka kirjoittaja valitsi käsikirjoitukselle."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Valitse kielet, joilla otsikko ja tiivistelmä on täytettävä, jotta käsikirjoitus voidaan viimeistellä. Luettelossa näkyvät tälle lehdelle käytössä olevat käsikirjoituksen metatietokielet (Asetukset > Kielet)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Miten sääntöä sovelletaan"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Kunkin käsikirjoituksen ensisijaista kieltä vaatii jo OJS itse — sen valitseminen tässä ei muuta mitään. Vaatimus koskee sitä, joka tekee lähetyksen: lehden vastaavia ja toimittajia ei estetä heidän työskennellessään toisen käsikirjoituksen parissa, joten vanhat puutteelliset metatiedot voidaan säilyttää; mutta omaa artikkeliaan lähettävä vastaava on säännön alainen kuten kuka tahansa kirjoittaja. Jos osasto on asetettu tilaan ”Tiivistelmää ei vaadita”, tiivistelmä pysyy valinnaisena kaikilla kielillä."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Metatietojen kieli"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "lehden oletus"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "Käsikirjoituksen ohjatussa toiminnossa vaadittujen kielten välilehdet avataan automaattisesti, joten kirjoittajalle ei koskaan näytetä virhettä kentästä, jota hän ei näe."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Tälle lehdelle ei ole määritetty käsikirjoituksen metatietokieliä. Ota ne käyttöön kohdassa Asetukset > Sivusto/Lehti > Kielet ennen tämän lisäosan käyttöä."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Tämä lehti vaatii tämän kentän myös kielellä {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Vaaditaan myös kielillä: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "ei käytössä"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Avainsanasarake ei ole käytössä"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Avainsanat vaaditaan tässä valituilla kielillä vain silloin, kun lehti tekee niistä pakollisia kohdassa Työnkulku > Metatiedot > Avainsanat = ”Vaaditaan”. Muilla asetuksilla tämän sarakkeen valinnat säilyvät, mutta ne eivät estä ketään."

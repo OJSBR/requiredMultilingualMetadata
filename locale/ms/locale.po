@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: ms\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Metadata Berbilang Bahasa Wajib"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Membolehkan jurnal mewajibkan tajuk dan abstrak dalam bahasa tambahan, selain bahasa utama serahan. Secara lalai OJS hanya mewajibkan metadata ini dalam bahasa yang dipilih penulis untuk serahan itu."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Pilih bahasa yang tajuk dan abstraknya wajib diisi supaya serahan boleh diselesaikan. Senarai memaparkan bahasa metadata serahan yang diaktifkan untuk jurnal ini (Tetapan > Bahasa)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Cara peraturan diguna pakai"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Bahasa utama setiap serahan sudah pun diwajibkan oleh OJS sendiri — memilihnya di sini tidak mengubah apa-apa. Kewajiban ini terpakai kepada sesiapa yang membuat serahan: pengurus jurnal dan editor tidak dihalang semasa mengurus serahan orang lain, jadi metadata lama yang tidak lengkap boleh dikekalkan; namun pengurus yang menghantar artikelnya sendiri tertakluk kepada peraturan seperti mana-mana penulis. Jika seksyen ditetapkan kepada \"Abstrak tidak diperlukan\", abstrak kekal pilihan dalam semua bahasa."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Bahasa metadata"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "lalai jurnal"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "Dalam bestari serahan, tab bagi bahasa yang diwajibkan dibuka secara automatik, jadi penulis tidak pernah dipaparkan ralat bagi medan yang tidak dilihatnya."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Jurnal ini belum mengkonfigurasi bahasa metadata serahan. Aktifkannya di Tetapan > Laman Web/Jurnal > Bahasa sebelum menggunakan pemalam ini."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Jurnal ini turut mewajibkan medan ini dalam bahasa {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Turut diwajibkan dalam: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "tidak aktif"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Lajur kata kunci tidak aktif"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Kata kunci hanya diwajibkan dalam bahasa yang ditanda di sini apabila jurnal menetapkannya sebagai wajib di Aliran Kerja > Metadata > Kata kunci = \"Wajib\". Pada tetapan lain, apa yang ditanda dalam lajur ini kekal disimpan tetapi tidak menghalang sesiapa."

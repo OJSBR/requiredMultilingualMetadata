@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: fa\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "فرادادهٔ چندزبانهٔ الزامی"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "به نشریه امکان می‌دهد عنوان و چکیده را افزون بر زبان اصلی ارسال، در زبان‌های دیگر نیز الزامی کند. به‌طور پیش‌فرض OJS این فراداده را فقط در زبانی که نویسنده برای ارسال برگزیده الزامی می‌داند."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "زبان‌هایی را انتخاب کنید که عنوان و چکیده باید در آن‌ها پر شود تا ارسال تکمیل گردد. فهرست، زبان‌های فرادادهٔ ارسال فعال در این نشریه را نشان می‌دهد (تنظیمات > زبان‌ها)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "قاعده چگونه اعمال می‌شود"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "زبان اصلی هر ارسال از پیش توسط خود OJS الزامی است — انتخاب آن در اینجا چیزی را تغییر نمی‌دهد. این الزام بر کسی اعمال می‌شود که ارسال را انجام می‌دهد: مدیران و سردبیران نشریه هنگام کار روی ارسال دیگران متوقف نمی‌شوند، پس فراداده‌های ناقص قدیمی حفظ می‌شود؛ اما مدیری که مقالهٔ خود را می‌فرستد مانند هر نویسنده‌ای مشمول قاعده است. اگر بخش روی «چکیده الزامی نیست» تنظیم شده باشد، چکیده در همهٔ زبان‌ها اختیاری می‌ماند."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "زبان فراداده"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "پیش‌فرض نشریه"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "در جادوگر ارسال، زبانه‌های زبان‌های الزامی به‌طور خودکار باز می‌شوند تا هرگز خطایی دربارهٔ فیلدی که نویسنده نمی‌بیند نشان داده نشود."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "در این نشریه هیچ زبان فرادادهٔ ارسالی پیکربندی نشده است. پیش از استفاده از این افزونه، آن‌ها را در تنظیمات > وب‌سایت/نشریه > زبان‌ها فعال کنید."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "این نشریه این فیلد را به زبان {$language} نیز الزامی می‌داند."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "در این زبان‌ها نیز الزامی است: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "غیرفعال"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "ستون کلیدواژه‌ها غیرفعال است"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "کلیدواژه‌ها فقط زمانی در زبان‌های تیک‌خوردهٔ اینجا الزامی‌اند که نشریه آن‌ها را در گردش کار > فراداده > کلیدواژه‌ها = «الزامی» اجباری کند. در هر تنظیم دیگری، آنچه در این ستون تیک خورده ذخیره می‌شود اما مانع کسی نمی‌شود."

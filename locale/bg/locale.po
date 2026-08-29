@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: bg\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Задължителни многоезични метаданни"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Позволява на списанието да изисква заглавие и резюме на допълнителни езици, освен основния език на предложението. По подразбиране OJS изисква тези метаданни само на езика, който авторът е избрал за предложението."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Изберете езиците, на които заглавието и резюмето трябва да бъдат попълнени, за да е завършено предложението. Списъкът показва езиците за метаданни на предложенията, активни за това списание (Настройки > Езици)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Как се прилага правилото"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Основният език на всяко предложение вече се изисква от самия OJS — избирането му тук не променя нищо. Изискването важи за този, който подава: мениджърите и редакторите на списанието не се спират, когато работят по чуждо предложение, така че непълни стари метаданни могат да се запазят; но мениджър, който подава собствена статия, е подчинен на правилото като всеки автор. Ако разделът е зададен на „Резюмето не се изисква“, резюмето остава незадължително на всички езици."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Език на метаданните"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "по подразбиране за списанието"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "В помощника за предложения разделите за задължителните езици се отварят автоматично, така че на автора никога не се показва грешка за поле, което не вижда."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "В това списание няма настроени езици за метаданни на предложенията. Активирайте ги в Настройки > Уебсайт/Списание > Езици, преди да използвате приставката."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Това списание изисква полето и на {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Изисква се също на: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "неактивен"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Колоната с ключови думи е неактивна"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Ключовите думи са задължителни на отметнатите тук езици само когато списанието ги направи задължителни в Работен процес > Метаданни > Ключови думи = „Изисква се“. При всяка друга настройка отметките в тази колона се пазят, но не спират никого."

@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: hy\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Պարտադիր բազմալեզու մետատվյալներ"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Թույլ է տալիս ամսագրին պահանջել վերնագիր և ամփոփում լրացուցիչ լեզուներով՝ ներկայացման հիմնական լեզվից բացի։ Կանխադրված OJS-ը այս մետատվյալները պահանջում է միայն այն լեզվով, որը հեղինակն ընտրել է ներկայացման համար։"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Ընտրեք լեզուները, որոնցով պետք է լրացվեն վերնագիրը և ամփոփումը, որպեսզի ներկայացումն ավարտվի։ Ցանկը ցույց է տալիս այս ամսագրի համար միացված ներկայացման մետատվյալների լեզուները (Կարգավորումներ > Լեզուներ)։"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Ինչպես է կիրառվում կանոնը"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Յուրաքանչյուր ներկայացման հիմնական լեզուն արդեն պահանջվում է հենց OJS-ի կողմից — այստեղ ընտրելը ոչինչ չի փոխում։ Պահանջը վերաբերում է նրան, ով ներկայացնում է. ամսագրի կառավարիչներն ու խմբագիրները չեն արգելափակվում ուրիշի ներկայացման վրա աշխատելիս, ուստի հին թերի մետատվյալները կարող են պահպանվել. սակայն սեփական հոդվածը ներկայացնող կառավարիչը ենթարկվում է կանոնին ինչպես ցանկացած հեղինակ։ Եթե բաժինը սահմանված է «Ամփոփումը պարտադիր չէ», ամփոփումը մնում է ընտրովի բոլոր լեզուներով։"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Մետատվյալների լեզու"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "ամսագրի կանխադրվածը"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "Ներկայացման հրաշագործում պարտադիր լեզուների ներդիրները բացվում են ինքնաշխատ, ուստի հեղինակին երբեք սխալ չի ցուցադրվում այն դաշտի համար, որը նա չի տեսնում։"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Այս ամսագրում ներկայացման մետատվյալների լեզուներ կարգավորված չեն։ Միացրեք դրանք «Կարգավորումներ > Կայք/Ամսագիր > Լեզուներ» բաժնում՝ նախքան այս հավելումն օգտագործելը։"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Այս ամսագիրը պահանջում է այս դաշտը նաև {$language} լեզվով։"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Պահանջվում է նաև՝ {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "ոչ ակտիվ"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Բանալի բառերի սյունակն ակտիվ չէ"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Բանալի բառերը այստեղ նշված լեզուներում պարտադիր են միայն այն դեպքում, երբ ամսագիրը դրանք պարտադիր է դարձնում «Աշխատահոսք > Մետատվյալներ > Բանալի բառեր = «Պահանջվում է»» կարգավորմամբ։ Ցանկացած այլ դեպքում այս սյունակի նշումները պահվում են, բայց ոչ մեկին չեն արգելափակում։"

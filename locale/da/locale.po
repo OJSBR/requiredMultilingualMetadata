@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: da\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Påkrævede flersprogede metadata"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Gør det muligt for tidsskriftet at kræve titel og resumé på flere sprog ud over indsendelsens primære sprog. Som standard kræver OJS kun disse metadata på det sprog, forfatteren har valgt til indsendelsen."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Vælg de sprog, hvor titel og resumé skal udfyldes, for at en indsendelse kan fuldføres. Listen viser de sprog til indsendelsesmetadata, der er aktiveret for dette tidsskrift (Indstillinger > Sprog)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Sådan anvendes reglen"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Det primære sprog for hver indsendelse kræves allerede af OJS selv — at vælge det her ændrer intet. Kravet gælder den, der indsender: tidsskriftsledere og redaktører blokeres ikke, mens de arbejder på en andens indsendelse, så ufuldstændige ældre metadata kan bevares; men en leder, der indsender sin egen artikel, er omfattet af reglen som enhver forfatter. Hvis sektionen er sat til \"Resumé ikke påkrævet\", forbliver resuméet valgfrit på alle sprog."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Metadatasprog"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "tidsskriftets standard"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "I indsendelsesguiden åbnes fanerne for de påkrævede sprog automatisk, så forfatteren aldrig får en fejl for et felt, vedkommende ikke kan se."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Dette tidsskrift har ingen sprog til indsendelsesmetadata konfigureret. Aktivér dem under Indstillinger > Websted/Tidsskrift > Sprog, før du bruger dette plugin."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Dette tidsskrift kræver også dette felt på {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Også påkrævet på: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "inaktiv"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Kolonnen med nøgleord er inaktiv"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Nøgleord er kun påkrævet på de sprog, der er markeret her, når tidsskriftet gør dem obligatoriske under Arbejdsgang > Metadata > Nøgleord = \"Påkrævet\". Ved enhver anden indstilling bevares markeringerne i denne kolonne, men de blokerer ingen."

@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: cs\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Povinná vícejazyčná metadata"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Umožňuje časopisu vyžadovat název a abstrakt i v dalších jazycích, nad rámec hlavního jazyka příspěvku. Ve výchozím nastavení OJS tato metadata vyžaduje pouze v jazyce, který autor pro příspěvek zvolil."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Zvolte jazyky, v nichž musí být vyplněn název a abstrakt, aby bylo možné příspěvek dokončit. Seznam ukazuje jazyky metadat příspěvků povolené v tomto časopise (Nastavení > Jazyky)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Jak se pravidlo uplatňuje"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Hlavní jazyk každého příspěvku vyžaduje už samotný OJS — jeho výběr zde nic nemění. Požadavek platí pro toho, kdo příspěvek podává: manažeři a editoři časopisu nejsou blokováni, když pracují na cizím příspěvku, takže lze zachovat neúplná starší metadata; manažer podávající vlastní článek však pravidlu podléhá jako každý autor. Je-li sekce nastavena na „Abstrakt není vyžadován“, zůstává abstrakt volitelný ve všech jazycích."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Jazyk metadat"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "výchozí pro časopis"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "V průvodci příspěvkem se karty povinných jazyků otevírají automaticky, takže autorovi se nikdy nezobrazí chyba u pole, které nevidí."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Tento časopis nemá nastavené jazyky metadat příspěvků. Povolte je v Nastavení > Web/Časopis > Jazyky, než začnete tento modul používat."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Tento časopis vyžaduje toto pole také v jazyce {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Vyžadováno také v: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "neaktivní"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Sloupec klíčových slov je neaktivní"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Klíčová slova jsou povinná v jazycích zaškrtnutých zde jen tehdy, když je časopis vyžaduje v Pracovní postup > Metadata > Klíčová slova = „Vyžadováno“. Při jakémkoli jiném nastavení zůstane zaškrtnutí v tomto sloupci uloženo, ale nikoho neblokuje."

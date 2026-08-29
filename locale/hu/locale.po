@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: hu\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Kötelező többnyelvű metaadatok"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Lehetővé teszi, hogy a folyóirat a beküldés elsődleges nyelvén túl további nyelveken is megkövetelje a címet és az összefoglalót. Alapértelmezés szerint az OJS csak azon a nyelven kéri ezeket a metaadatokat, amelyet a szerző a beküldéshez választott."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Válassza ki azokat a nyelveket, amelyeken a címet és az összefoglalót ki kell tölteni a beküldés befejezéséhez. A lista a folyóiratban engedélyezett beküldési metaadat-nyelveket mutatja (Beállítások > Nyelvek)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Hogyan érvényesül a szabály"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Az egyes beküldések elsődleges nyelvét maga az OJS is megköveteli – itt kiválasztani semmit sem változtat. A követelmény arra vonatkozik, aki beküld: a folyóirat menedzsereit és szerkesztőit nem akadályozza, amikor más beküldésén dolgoznak, így a hiányos régi metaadatok megőrizhetők; a saját cikkét beküldő menedzserre azonban ugyanúgy vonatkozik a szabály, mint bármely szerzőre. Ha a rovat beállítása „Nem szükséges összefoglaló”, az összefoglaló minden nyelven opcionális marad."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Metaadatok nyelve"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "a folyóirat alapértelmezése"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "A beküldési varázslóban a kötelező nyelvek lapjai automatikusan megnyílnak, így a szerző soha nem kap hibaüzenetet olyan mezőről, amelyet nem lát."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Ebben a folyóiratban nincsenek beállítva beküldési metaadat-nyelvek. Engedélyezze őket a Beállítások > Webhely/Folyóirat > Nyelvek alatt, mielőtt használná a bővítményt."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Ez a folyóirat ezt a mezőt {$language} nyelven is megköveteli."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Kötelező ezeken is: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "inaktív"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "A kulcsszavak oszlop inaktív"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "A kulcsszavak csak akkor kötelezők az itt bejelölt nyelveken, ha a folyóirat kötelezővé teszi őket a Munkafolyamat > Metaadatok > Kulcsszavak = „Kötelező” beállításban. Bármely más beállítás mellett az ebben az oszlopban bejelölt értékek megmaradnak, de senkit sem akadályoznak."

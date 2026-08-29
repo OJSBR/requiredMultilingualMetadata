@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: vi\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Siêu dữ liệu đa ngữ bắt buộc"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Cho phép tạp chí yêu cầu nhan đề và tóm tắt ở các ngôn ngữ bổ sung, ngoài ngôn ngữ chính của bài nộp. Mặc định OJS chỉ yêu cầu siêu dữ liệu này ở ngôn ngữ mà tác giả đã chọn cho bài nộp."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Chọn những ngôn ngữ mà nhan đề và tóm tắt bắt buộc phải điền để bài nộp có thể hoàn tất. Danh sách hiển thị các ngôn ngữ siêu dữ liệu bài nộp đang bật cho tạp chí này (Thiết lập > Ngôn ngữ)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Quy tắc được áp dụng thế nào"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Ngôn ngữ chính của mỗi bài nộp vốn đã được chính OJS yêu cầu — chọn nó ở đây không thay đổi gì. Yêu cầu áp dụng cho người nộp bài: quản lý tạp chí và biên tập viên không bị chặn khi làm việc trên bài nộp của người khác, nhờ đó siêu dữ liệu cũ chưa đầy đủ vẫn giữ được; nhưng một quản lý nộp bài của chính mình thì chịu quy tắc như mọi tác giả. Nếu chuyên mục được đặt là \"Không bắt buộc tóm tắt\", phần tóm tắt vẫn là tùy chọn ở mọi ngôn ngữ."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Ngôn ngữ siêu dữ liệu"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "mặc định của tạp chí"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "Trong trình hướng dẫn nộp bài, các thẻ của những ngôn ngữ bắt buộc được mở tự động, nên tác giả không bao giờ nhận lỗi cho một trường mà họ không nhìn thấy."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Tạp chí này chưa cấu hình ngôn ngữ siêu dữ liệu bài nộp. Hãy bật chúng ở Thiết lập > Trang web/Tạp chí > Ngôn ngữ trước khi dùng trình cắm này."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Tạp chí này cũng yêu cầu trường này bằng {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Cũng bắt buộc ở: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "không hoạt động"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Cột từ khóa không hoạt động"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Từ khóa chỉ bắt buộc ở những ngôn ngữ được đánh dấu tại đây khi tạp chí đặt chúng là bắt buộc trong Quy trình > Siêu dữ liệu > Từ khóa = \"Bắt buộc\". Ở mọi thiết lập khác, những gì được đánh dấu trong cột này vẫn được lưu nhưng không chặn ai."

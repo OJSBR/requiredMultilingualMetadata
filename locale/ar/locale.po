@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: ar\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "بيانات وصفية متعددة اللغات مطلوبة"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "يتيح للمجلة اشتراط العنوان والملخّص بلغات إضافية، إلى جانب اللغة الأساسية للطلب. فـ OJS لا يشترط هذه البيانات الوصفية افتراضياً إلا باللغة التي اختارها المؤلف للطلب."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "اختر اللغات التي يجب ملء العنوان والملخّص بها ليكتمل الطلب. تعرض القائمة لغات البيانات الوصفية للطلبات المفعّلة في هذه المجلة (الإعدادات > اللغات)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "كيف تُطبَّق القاعدة"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "اللغة الأساسية لكل طلب مشترطة أصلاً في OJS نفسه — واختيارها هنا لا يغيّر شيئاً. ويسري الاشتراط على من يقدّم الطلب: فمديرو المجلة والمحرّرون لا يُمنعون وهم يعملون على طلب شخص آخر، ما يسمح بالإبقاء على بيانات وصفية قديمة ناقصة؛ أما المدير الذي يقدّم مقالته هو، فيخضع للقاعدة كأي مؤلف. وإذا ضُبط القسم على \"الملخّص غير مطلوب\"، بقي الملخّص اختيارياً بكل اللغات."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "لغة البيانات الوصفية"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "الافتراضي للمجلة"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "في معالج الطلب تُفتح تلقائياً تبويبات اللغات المطلوبة، فلا يُعرض على المؤلف خطأ يخصّ حقلاً لا يراه."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "لم تُضبَط في هذه المجلة أي لغات للبيانات الوصفية للطلبات. فعّلها في الإعدادات > الموقع/المجلة > اللغات قبل استخدام هذا الملحق."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "تشترط هذه المجلة هذا الحقل أيضاً بلغة {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "مطلوب أيضاً في: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "غير نشط"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "عمود الكلمات المفتاحية غير مفعّل"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "لا تكون الكلمات المفتاحية مطلوبة باللغات المحدَّدة هنا إلا عندما تجعلها المجلة إلزامية في سير العمل > البيانات الوصفية > الكلمات المفتاحية = \"إلزامي\". وفي أي إعداد آخر يبقى ما حُدِّد في هذا العمود محفوظاً لكنه لا يمنع أحداً."

@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: ro\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Metadate multilingve obligatorii"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Permite revistei să solicite titlul și rezumatul și în alte limbi, dincolo de limba principală a propunerii. În mod implicit, OJS solicită aceste metadate doar în limba aleasă de autor pentru propunere."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Alegeți limbile în care titlul și rezumatul trebuie completate pentru ca o propunere să poată fi finalizată. Lista arată limbile pentru metadatele propunerilor activate în această revistă (Setări > Limbi)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Cum se aplică regula"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Limba principală a fiecărei propuneri este deja obligatorie în OJS — selectarea ei aici nu schimbă nimic. Cerința se aplică celui care depune: managerii revistei și editorii nu sunt blocați când lucrează la propunerea altcuiva, astfel încât metadatele vechi incomplete pot fi păstrate; însă un manager care își depune propriul articol se supune regulii ca orice autor. Dacă secțiunea este setată pe „Rezumat neobligatoriu”, rezumatul rămâne opțional în toate limbile."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Limba metadatelor"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "implicit pentru revistă"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "În asistentul de propunere, filele limbilor obligatorii se deschid automat, astfel încât autorului nu i se afișează niciodată o eroare pentru un câmp pe care nu îl vede."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Această revistă nu are configurate limbi pentru metadatele propunerilor. Activați-le în Setări > Site web/Revistă > Limbi înainte de a folosi acest modul."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Această revistă solicită acest câmp și în {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Obligatoriu și în: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "inactiv"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Coloana cuvintelor-cheie este inactivă"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Cuvintele-cheie sunt obligatorii în limbile bifate aici doar când revista le impune în Flux de lucru > Metadate > Cuvinte-cheie = „Obligatoriu”. La orice altă setare, ceea ce este bifat în această coloană se păstrează, dar nu blochează pe nimeni."

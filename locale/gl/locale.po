@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: gl\n"
+
+
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Metadatos multilingües obrigatorios"
+
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Permítelle á revista esixir o título e o resumo noutras linguas, alén da lingua principal do envío. De xeito predeterminado, OJS só esixe estes metadatos na lingua que a autoría escolleu para o envío."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Escolla as linguas nas que hai que cubrir o título e o resumo para poder completar un envío. A lista amosa as linguas de metadatos de envío activadas nesta revista (Configuración > Idiomas)."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Como se aplica a regra"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "A lingua principal de cada envío xa é esixida polo propio OJS — seleccionala aquí non cambia nada. A esixencia aplícase a quen fai o envío: o persoal xestor e editor da revista non queda bloqueado mentres traballa no envío doutra persoa, así que se poden conservar metadatos antigos incompletos; pero un xestor que envía o seu propio artigo está suxeito á regra como calquera autoría. Se a sección está definida como «Resumo non obrigatorio», o resumo segue a ser opcional en todas as linguas."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Lingua dos metadatos"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "predeterminado da revista"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "No asistente de envío, as lapelas das linguas obrigatorias ábrense automaticamente, así que á autoría nunca se lle amosa un erro dun campo que non pode ver."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Esta revista non ten configuradas linguas de metadatos de envío. Actíveas en Configuración > Sitio web/Revista > Idiomas antes de usar este complemento."
+
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Esta revista tamén require este campo en {$language}."
+
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Tamén obrigatorio en: {$languages}"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "inactivo"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "A columna de palabras clave está inactiva"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "As palabras clave só son obrigatorias nas linguas marcadas aquí cando a revista as fai obrigatorias en Fluxo de traballo > Metadatos > Palabras clave = «Obrigatorio». Con calquera outra opción, o que estea marcado nesta columna consérvase pero non bloquea a ninguén."

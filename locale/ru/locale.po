@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: ru\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Обязательные многоязычные метаданные"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Позволяет журналу требовать заглавие и аннотацию на дополнительных языках, помимо основного языка подачи. По умолчанию OJS требует эти метаданные только на языке, который автор выбрал для подачи."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Выберите языки, на которых нужно заполнить заглавие и аннотацию, чтобы подача была завершена. В списке показаны языки метаданных подачи, включённые в этом журнале («Настройки > Языки»)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Как применяется правило"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Основной язык каждой подачи и так требуется самим OJS — выбор его здесь ничего не меняет. Требование распространяется на того, кто подаёт: менеджеров журнала и редакторов не блокируют, пока они работают над чужой подачей, поэтому неполные старые метаданные можно сохранить; но менеджер, подающий собственную статью, подчиняется правилу, как любой автор. Если раздел настроен как «Аннотация не требуется», аннотация остаётся необязательной на всех языках."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Язык метаданных"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "по умолчанию для журнала"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "В мастере подачи вкладки обязательных языков открываются автоматически, поэтому автору никогда не показывают ошибку по полю, которого он не видит."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "В этом журнале не настроены языки метаданных подачи. Включите их в «Настройки > Сайт/Журнал > Языки», прежде чем использовать модуль."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Этот журнал требует это поле также на языке {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Также обязательно на: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "неактивен"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Столбец ключевых слов неактивен"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Ключевые слова обязательны на отмеченных здесь языках только тогда, когда журнал делает их обязательными в «Рабочий процесс > Метаданные > Ключевые слова = „Обязательно“». При любой другой настройке отметки в этом столбце сохраняются, но никого не блокируют."

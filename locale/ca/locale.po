@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: ca\n"
+
+
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Metadades multilingües obligatòries"
+
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Permet que la revista exigeixi el títol i el resum en llengües addicionals, més enllà de la llengua principal de la tramesa. Per defecte, l'OJS només exigeix aquestes metadades en la llengua que l'autor ha triat per a la tramesa."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Trieu les llengües en què cal emplenar el títol i el resum perquè una tramesa es pugui completar. La llista mostra les llengües de metadades de tramesa habilitades en aquesta revista (Configuració > Idiomes)."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Com s'aplica la regla"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "La llengua principal de cada tramesa ja és obligatòria per l'OJS mateix: seleccionar-la aquí no canvia res. L'exigència s'aplica a qui fa la tramesa: els gestors i editors de la revista no queden bloquejats mentre treballen en la tramesa d'una altra persona, de manera que es poden conservar metadades antigues incompletes; però un gestor que tramet el seu propi article està subjecte a la regla com qualsevol autor. Si la secció està configurada com a «Resum no obligatori», el resum continua sent opcional en totes les llengües."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Llengua de les metadades"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "per defecte de la revista"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "A l'assistent de tramesa, les pestanyes de les llengües obligatòries s'obren automàticament, de manera que a l'autor mai no se li mostra un error d'un camp que no pot veure."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Aquesta revista no té configurades llengües de metadades de tramesa. Habiliteu-les a Configuració > Lloc web/Revista > Idiomes abans de fer servir aquest connector."
+
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Aquesta revista també requereix aquest camp en {$language}."
+
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "També obligatori en: {$languages}"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "inactiu"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "La columna de paraules clau està inactiva"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Les paraules clau només són obligatòries en les llengües marcades aquí quan la revista les fa obligatòries a Flux de treball > Metadades > Paraules clau = «Obligatori». Amb qualsevol altra opció, el que hi hagi marcat en aquesta columna es conserva però no bloqueja ningú."

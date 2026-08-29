@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: tr\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Zorunlu Çok Dilli Üstveri"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Derginin, gönderinin birincil dilinin yanı sıra başka dillerde de başlık ve özet istemesini sağlar. Varsayılan olarak OJS bu üstveriyi yalnızca yazarın gönderi için seçtiği dilde ister."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Bir gönderinin tamamlanabilmesi için başlık ve özetin hangi dillerde doldurulması gerektiğini seçin. Listede bu dergi için etkin olan gönderi üstveri dilleri görünür (Ayarlar > Diller)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Kural nasıl uygulanır"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Her gönderinin birincil dili zaten OJS tarafından zorunlu tutulur — burada seçmek hiçbir şeyi değiştirmez. Zorunluluk, gönderiyi yapan kişiye uygulanır: dergi yöneticileri ve editörler başkasının gönderisi üzerinde çalışırken engellenmez, böylece eksik eski üstveri korunabilir; ancak kendi makalesini gönderen bir yönetici, herhangi bir yazar gibi kurala tabidir. Bölüm \"Özet gerekmiyor\" olarak ayarlanmışsa, özet tüm dillerde isteğe bağlı kalır."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Üstveri dili"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "derginin varsayılanı"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "Gönderi sihirbazında zorunlu dillerin sekmeleri kendiliğinden açılır; böylece yazara, göremediği bir alan için hata gösterilmez."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Bu dergide gönderi üstverisi dilleri yapılandırılmamış. Bu eklentiyi kullanmadan önce Ayarlar > Web Sitesi/Dergi > Diller bölümünden etkinleştirin."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Bu dergi bu alanı {$language} dilinde de zorunlu tutuyor."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Şu dillerde de zorunlu: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "etkin değil"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Anahtar sözcük sütunu etkin değil"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Anahtar sözcükler burada işaretlenen dillerde yalnızca dergi bunları İş Akışı > Üstveri > Anahtar sözcükler = \"Zorunlu\" ile zorunlu kıldığında istenir. Başka herhangi bir ayarda bu sütunda işaretli olanlar korunur ama kimseyi engellemez."

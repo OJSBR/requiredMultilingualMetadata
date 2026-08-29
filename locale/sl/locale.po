@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: sl\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Obvezni večjezični metapodatki"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Reviji omogoča, da naslov in izvleček zahteva tudi v dodatnih jezikih, poleg glavnega jezika prijave. Privzeto OJS te metapodatke zahteva le v jeziku, ki ga je avtor izbral za prijavo."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Izberite jezike, v katerih morata biti izpolnjena naslov in izvleček, da je prijava lahko zaključena. Seznam prikazuje jezike metapodatkov prijave, omogočene v tej reviji (Nastavitve > Jeziki)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Kako se pravilo uporablja"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Glavni jezik vsake prijave zahteva že sam OJS – izbira tukaj ne spremeni ničesar. Zahteva velja za tistega, ki oddaja: upravnikov revije in urednikov ne ovira, ko delajo na tuji prijavi, zato je mogoče ohraniti nepopolne starejše metapodatke; upravnik, ki oddaja lasten članek, pa je pravilu podvržen kot vsak avtor. Če je rubrika nastavljena na »Izvleček ni obvezen«, izvleček ostane neobvezen v vseh jezikih."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Jezik metapodatkov"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "privzeto za revijo"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "V čarovniku za prijavo se zavihki obveznih jezikov odprejo samodejno, zato avtor nikoli ne dobi napake za polje, ki ga ne vidi."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Ta revija nima nastavljenih jezikov metapodatkov prijave. Omogočite jih pod Nastavitve > Spletišče/Revija > Jeziki, preden uporabite ta vtičnik."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Ta revija to polje zahteva tudi v jeziku {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Zahtevano tudi v: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "neaktiven"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Stolpec ključnih besed ni aktiven"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Ključne besede so v tukaj označenih jezikih obvezne le takrat, ko jih revija zahteva pod Potek dela > Metapodatki > Ključne besede = »Zahtevano«. Pri katerikoli drugi nastavitvi se označeno v tem stolpcu ohrani, a nikogar ne ovira."

@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: nl\n"
+
+
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Verplichte meertalige metadata"
+
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Maakt het mogelijk dat het tijdschrift titel en samenvatting in extra talen verplicht stelt, naast de hoofdtaal van de inzending. Standaard vereist OJS deze metadata alleen in de taal die de auteur voor de inzending koos."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Kies de talen waarin de titel en de samenvatting moeten worden ingevuld om een inzending te kunnen voltooien. De lijst toont de talen voor inzendingsmetadata die voor dit tijdschrift zijn ingeschakeld (Instellingen > Talen)."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Hoe de regel wordt toegepast"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "De hoofdtaal van elke inzending wordt al door OJS zelf vereist — die hier aanvinken verandert niets. De eis geldt voor wie indient: beheerders en redacteuren van het tijdschrift worden niet geblokkeerd terwijl ze aan de inzending van iemand anders werken, zodat onvolledige oude metadata behouden kunnen blijven; maar een beheerder die zijn eigen artikel indient, valt net als elke auteur onder de regel. Staat de sectie op “Samenvatting niet vereist”, dan blijft de samenvatting in alle talen optioneel."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Taal van de metadata"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "standaard van het tijdschrift"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "In de inzendingswizard worden de tabbladen van de verplichte talen automatisch geopend, zodat de auteur nooit een fout te zien krijgt voor een veld dat hij niet ziet."
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Voor dit tijdschrift zijn geen talen voor inzendingsmetadata ingesteld. Schakel ze in via Instellingen > Website/Tijdschrift > Talen voordat u deze plug-in gebruikt."
+
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Dit tijdschrift vereist dit veld ook in het {$language}."
+
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Ook vereist in: {$languages}"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "inactief"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "De trefwoordenkolom is inactief"
+
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Trefwoorden zijn alleen verplicht in de hier aangevinkte talen wanneer het tijdschrift ze verplicht stelt via Workflow > Metadata > Trefwoorden = “Vereist”. Bij elke andere instelling blijft wat in deze kolom is aangevinkt bewaard, maar blokkeert het niemand."

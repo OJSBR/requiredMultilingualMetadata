@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: uk\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Обов'язкові багатомовні метадані"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Дозволяє журналу вимагати заголовок і анотацію додатковими мовами, окрім основної мови подання. Типово OJS вимагає ці метадані лише мовою, яку автор обрав для подання."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Виберіть мови, якими потрібно заповнити заголовок і анотацію, щоб подання можна було завершити. У списку показано мови метаданих подання, увімкнені в цьому журналі («Налаштування > Мови»)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Як застосовується правило"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Основну мову кожного подання вимагає вже сам OJS — вибір її тут нічого не змінює. Вимога стосується того, хто подає: менеджерів журналу та редакторів не блокують, поки вони працюють над чужим поданням, тож неповні давні метадані можна зберегти; але менеджер, який подає власну статтю, підпорядкований правилу, як і будь-який автор. Якщо розділ налаштовано як «Анотація не потрібна», анотація лишається необов'язковою всіма мовами."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Мова метаданих"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "типово для журналу"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "У майстрі подання вкладки обов'язкових мов відкриваються автоматично, тому авторові ніколи не показують помилку щодо поля, якого він не бачить."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "У цьому журналі не налаштовано мов метаданих подання. Увімкніть їх у «Налаштування > Вебсайт/Журнал > Мови», перш ніж використовувати модуль."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Цей журнал вимагає це поле також мовою {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Також обов'язково: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "неактивний"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Стовпець ключових слів неактивний"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Ключові слова обов'язкові вибраними тут мовами лише тоді, коли журнал робить їх обов'язковими в «Робочий процес > Метадані > Ключові слова = „Обов'язково“». За будь-якого іншого налаштування позначки в цьому стовпці зберігаються, але нікого не блокують."

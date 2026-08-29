@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: mk\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Задолжителни повеќејазични метаподатоци"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Му овозможува на списанието да бара наслов и апстракт и на дополнителни јазици, покрај основниот јазик на поднесокот. Стандардно, OJS ги бара овие метаподатоци само на јазикот што авторот го избрал за поднесокот."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Изберете ги јазиците на кои мора да се пополнат насловот и апстрактот за да може поднесокот да се заврши. Списокот ги прикажува јазиците за метаподатоци на поднесоци активни за ова списание (Поставки > Јазици)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Како се применува правилото"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Основниот јазик на секој поднесок веќе го бара самиот OJS — изборот тука ништо не менува. Барањето важи за оној што поднесува: менаџерите и уредниците на списанието не се блокираат додека работат на туѓ поднесок, па нецелосните стари метаподатоци може да се задржат; но менаџер што го поднесува сопствениот труд подлежи на правилото како и секој автор. Ако секцијата е поставена на „Апстракт не е задолжителен“, апстрактот останува изборен на сите јазици."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Јазик на метаподатоците"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "стандардно за списанието"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "Во волшебникот за поднесување, картичките за задолжителните јазици се отвораат автоматски, па на авторот никогаш не му се прикажува грешка за поле што не го гледа."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Ова списание нема конфигурирани јазици за метаподатоци на поднесоци. Овозможете ги во Поставки > Веб-страница/Списание > Јазици пред да го користите приклучокот."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Ова списание го бара ова поле и на {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Задолжително и на: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "неактивен"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Колоната со клучни зборови е неактивна"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Клучните зборови се задолжителни на јазиците обележани тука само кога списанието ги прави задолжителни во Работен тек > Метаподатоци > Клучни зборови = „Задолжително“. При која било друга поставка, обележаното во оваа колона се чува, но никого не блокира."

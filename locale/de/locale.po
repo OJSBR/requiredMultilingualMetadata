@@ -9,6 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
 
+
 msgid "plugins.generic.requiredMultilingualMetadata.displayName"
 msgstr "Pflichtmetadaten in mehreren Sprachen"
 
@@ -36,6 +37,12 @@ msgstr "Im Einreichungsassistenten werden die Reiter der verlangten Sprachen aut
 msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
 msgstr "Für diese Zeitschrift sind keine Metadatensprachen für Einreichungen konfiguriert. Aktivieren Sie sie unter Einstellungen > Website/Zeitschrift > Sprachen, bevor Sie dieses Plugin verwenden."
 
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Diese Zeitschrift verlangt dieses Feld auch auf {$language}."
+
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Auch erforderlich auf: {$languages}"
+
 msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
 msgstr "inaktiv"
 
@@ -44,9 +51,3 @@ msgstr "Die Spalte „Schlagwörter“ ist inaktiv"
 
 msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
 msgstr "Schlagwörter werden in den hier markierten Sprachen nur dann verlangt, wenn die Zeitschrift sie unter Workflow > Metadaten > Schlagwörter = „Erforderlich“ verbindlich macht. Bei jeder anderen Einstellung bleibt die Auswahl in dieser Spalte gespeichert, blockiert aber niemanden."
-
-msgid "plugins.generic.requiredMultilingualMetadata.error.required"
-msgstr "Diese Zeitschrift verlangt dieses Feld auch auf {$language}."
-
-msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
-msgstr "Auch erforderlich auf: {$languages}"

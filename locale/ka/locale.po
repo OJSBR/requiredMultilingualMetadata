@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: ka\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "სავალდებულო მრავალენოვანი მეტამონაცემები"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "საშუალებას აძლევს ჟურნალს, სათაური და აბსტრაქტი მოითხოვოს დამატებით ენებზეც, წარდგინების ძირითადი ენის გარდა. ნაგულისხმევად OJS ამ მეტამონაცემებს მოითხოვს მხოლოდ იმ ენაზე, რომელიც ავტორმა წარდგინებისთვის აირჩია."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "აირჩიეთ ენები, რომლებზეც სათაური და აბსტრაქტი უნდა შეივსოს, რომ წარდგინება დასრულდეს. სიაში ჩანს ამ ჟურნალისთვის ჩართული წარდგინების მეტამონაცემების ენები (პარამეტრები > ენები)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "როგორ მოქმედებს წესი"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "თითოეული წარდგინების ძირითად ენას თავად OJS უკვე მოითხოვს — აქ მისი მონიშვნა არაფერს ცვლის. მოთხოვნა ვრცელდება იმაზე, ვინც წარადგენს: ჟურნალის მენეჯერები და რედაქტორები არ ბლოკირდებიან სხვისი წარდგინებაზე მუშაობისას, ამიტომ ძველი არასრული მეტამონაცემები შენარჩუნებადია; თუმცა მენეჯერი, რომელიც საკუთარ სტატიას წარადგენს, წესს ისევე ექვემდებარება, როგორც ნებისმიერი ავტორი. თუ სექცია დაყენებულია როგორც „აბსტრაქტი არ არის სავალდებულო“, აბსტრაქტი ყველა ენაზე არჩევითი რჩება."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "მეტამონაცემების ენა"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "ჟურნალის ნაგულისხმევი"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "წარდგინების ოსტატში სავალდებულო ენების ჩანართები ავტომატურად იხსნება, ამიტომ ავტორს არასოდეს უჩვენებს შეცდომას იმ ველზე, რომელსაც ვერ ხედავს."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "ამ ჟურნალში წარდგინების მეტამონაცემების ენები კონფიგურირებული არ არის. ჩართეთ ისინი განყოფილებაში პარამეტრები > ვებსაიტი/ჟურნალი > ენები, სანამ ამ დანამატს გამოიყენებთ."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "ეს ჟურნალი ამ ველს ასევე {$language} ენაზე მოითხოვს."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "ასევე სავალდებულოა: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "არააქტიური"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "საკვანძო სიტყვების სვეტი არააქტიურია"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "საკვანძო სიტყვები აქ მონიშნულ ენებზე სავალდებულოა მხოლოდ მაშინ, როცა ჟურნალი მათ სავალდებულოდ აქცევს პარამეტრით „სამუშაო ნაკადი > მეტამონაცემები > საკვანძო სიტყვები = „სავალდებულოა““. ნებისმიერ სხვა პარამეტრში ამ სვეტში მონიშნული ინახება, მაგრამ არავის აჩერებს."

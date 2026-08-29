@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: OJSBR\n"
+"Language-Team: OJSBR\n"
+"Language: sr_Latn\n"
+
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.displayName"
+msgstr "Obavezni višejezični metapodaci"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.description"
+msgstr "Omogućava časopisu da traži naslov i apstrakt i na dodatnim jezicima, pored primarnog jezika priloga. Podrazumevano OJS ove metapodatke traži samo na jeziku koji je autor izabrao za prilog."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.description"
+msgstr "Izaberite jezike na kojima naslov i apstrakt moraju biti popunjeni da bi prilog mogao da se završi. Lista prikazuje jezike metapodataka priloga omogućene u ovom časopisu (Podešavanja > Jezici)."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.title"
+msgstr "Kako se pravilo primenjuje"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.notice.body"
+msgstr "Primarni jezik svakog priloga već zahteva sam OJS — biranje ovde ništa ne menja. Zahtev se odnosi na onoga ko podnosi: menadžeri časopisa i urednici nisu blokirani dok rade na tuđem prilogu, pa se nepotpuni stari metapodaci mogu zadržati; ali menadžer koji podnosi sopstveni članak podleže pravilu kao i svaki autor. Ako je sekcija podešena na „Apstrakt nije obavezan“, apstrakt ostaje opcion na svim jezicima."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.column.language"
+msgstr "Jezik metapodataka"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.defaultTag"
+msgstr "podrazumevano za časopis"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.hint"
+msgstr "U čarobnjaku za prilog kartice obaveznih jezika otvaraju se automatski, pa se autoru nikada ne prikazuje greška za polje koje ne vidi."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
+msgstr "Ovaj časopis nema podešene jezike metapodataka priloga. Omogućite ih u Podešavanja > Sajt/Časopis > Jezici pre nego što upotrebite ovaj dodatak."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Ovaj časopis zahteva ovo polje i na jeziku {$language}."
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Takođe obavezno na: {$languages}"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
+msgstr "neaktivan"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.title"
+msgstr "Kolona ključnih reči je neaktivna"
+
+#, fuzzy
+msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
+msgstr "Ključne reči su obavezne na jezicima označenim ovde samo kada ih časopis učini obaveznim u Tok rada > Metapodaci > Ključne reči = „Obavezno“. Pri bilo kom drugom podešavanju, ono što je označeno u ovoj koloni se čuva, ali nikoga ne blokira."

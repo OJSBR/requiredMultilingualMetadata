@@ -9,6 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt\n"
 
+
 msgid "plugins.generic.requiredMultilingualMetadata.displayName"
 msgstr "Metadados Obrigatórios em Vários Idiomas"
 
@@ -36,6 +37,12 @@ msgstr "No assistente de submissão, os separadores dos idiomas exigidos são ab
 msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
 msgstr "Esta revista não tem idiomas de metadados de submissão configurados. Active os idiomas em Configurações > Site/Revista > Idiomas antes de usar este plug-in."
 
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Esta revista exige este campo também em {$language}."
+
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Obrigatório também em: {$languages}"
+
 msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
 msgstr "inactiva"
 
@@ -44,9 +51,3 @@ msgstr "A coluna de palavras-chave está inactiva"
 
 msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
 msgstr "As palavras-chave só são exigidas nos idiomas assinalados aqui quando a revista as torna obrigatórias em Fluxo de Trabalho > Metadados > Palavras-chave = \"Exigir\". Com qualquer outra definição, o que estiver assinalado nesta coluna fica guardado, mas não bloqueia ninguém."
-
-msgid "plugins.generic.requiredMultilingualMetadata.error.required"
-msgstr "Esta revista exige este campo também em {$language}."
-
-msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
-msgstr "Obrigatório também em: {$languages}"

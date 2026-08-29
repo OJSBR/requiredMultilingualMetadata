@@ -9,6 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
 
+
 msgid "plugins.generic.requiredMultilingualMetadata.displayName"
 msgstr "Metadati obbligatori in più lingue"
 
@@ -36,6 +37,12 @@ msgstr "Nella procedura guidata di proposta le schede delle lingue richieste ven
 msgid "plugins.generic.requiredMultilingualMetadata.settings.noLocales"
 msgstr "Questa rivista non ha lingue dei metadati di proposta configurate. Le attivi in Impostazioni > Sito web/Rivista > Lingue prima di usare questo plugin."
 
+msgid "plugins.generic.requiredMultilingualMetadata.error.required"
+msgstr "Questa rivista richiede questo campo anche in {$language}."
+
+msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
+msgstr "Obbligatorio anche in: {$languages}"
+
 msgid "plugins.generic.requiredMultilingualMetadata.settings.inactive"
 msgstr "inattiva"
 
@@ -44,9 +51,3 @@ msgstr "La colonna «Parole chiave» è inattiva"
 
 msgid "plugins.generic.requiredMultilingualMetadata.settings.keywordsOff.body"
 msgstr "Le parole chiave sono richieste nelle lingue selezionate qui solo quando la rivista le rende obbligatorie in Flusso di lavoro > Metadati > Parole chiave = «Richiedi». Con qualsiasi altra impostazione, quanto selezionato in questa colonna viene conservato ma non blocca nessuno."
-
-msgid "plugins.generic.requiredMultilingualMetadata.error.required"
-msgstr "Questa rivista richiede questo campo anche in {$language}."
-
-msgid "plugins.generic.requiredMultilingualMetadata.field.notice"
-msgstr "Obbligatorio anche in: {$languages}"
