@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @file RequiredMultilingualMetadataSettingsForm.php
+ * @file plugins/generic/requiredMultilingualMetadata/RequiredMultilingualMetadataSettingsForm.php
  *
- * Plugin autoral OJSBR.
+ * Copyright (c) 2026 OJSBR (https://ojsbr.com)
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class RequiredMultilingualMetadataSettingsForm
  *
- * @brief Escolha dos idiomas em que título e resumo passam a ser obrigatórios,
- *        além do idioma principal de cada submissão.
+ * @brief The languages in which the title, the abstract and the keywords become
+ *        required, besides the language of each submission.
  */
 
 namespace APP\plugins\generic\requiredMultilingualMetadata;
@@ -30,7 +30,7 @@ class RequiredMultilingualMetadataSettingsForm extends Form
     }
 
     /**
-     * Nomes dos campos do formulário (titleLocales, abstractLocales).
+     * The names of the form fields (titleLocales, abstractLocales, keywordsLocales).
      *
      * @return array<int, string>
      */
@@ -80,24 +80,25 @@ class RequiredMultilingualMetadataSettingsForm extends Form
             $selected[$field] = is_array($value) ? $value : [];
         }
 
-        // Uma linha por idioma de metadados ativo na revista.
+        // One row per metadata language enabled in the journal or press.
         $rows = [];
         foreach ($this->plugin->getActiveLocales($this->context) as $locale) {
-            $linha = [
+            $row = [
                 'locale' => $locale,
                 'name' => $this->plugin->getLocaleName($locale),
                 'isDefaultSubmissionLocale' => $locale === $this->context->getData('supportedDefaultSubmissionLocale'),
             ];
             foreach (RequiredMultilingualMetadataPlugin::FIELDS as $field) {
-                $linha[$field] = in_array($locale, $selected[$field], true);
+                $row[$field] = in_array($locale, $selected[$field], true);
             }
-            $rows[] = $linha;
+            $rows[] = $row;
         }
 
         $templateMgr->assign([
             'pluginName' => $this->plugin->getName(),
+            'settingsStyleUrl' => $request->getBaseUrl() . '/' . $this->plugin->getPluginPath() . '/css/settingsForm.css',
             'localeRows' => $rows,
-            // A coluna de palavras-chave só tem efeito se a revista as exigir.
+            // The keywords column only has an effect where keywords are required.
             'keywordsRequired' => $this->plugin->isKeywordsRequired($this->context),
         ]);
 
@@ -115,7 +116,7 @@ class RequiredMultilingualMetadataSettingsForm extends Form
             $value = $this->getData($field . 'Locales');
             $value = is_array($value) ? $value : [];
 
-            // Só grava códigos de idioma que a revista realmente tem ativos.
+            // Only language codes the journal or press really has enabled are saved.
             $value = array_values(array_unique(array_filter(
                 $value,
                 fn ($locale): bool => is_string($locale) && in_array($locale, $active, true)

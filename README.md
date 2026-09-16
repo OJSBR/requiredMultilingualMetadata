@@ -1,28 +1,33 @@
-# Required Multilingual Metadata — OJS plugin
+# Required Multilingual Metadata — OJS and OMP plugin
 
 [![OJS](https://img.shields.io/badge/OJS-3.5-brightgreen)](https://pkp.sfu.ca/ojs/)
-[![Version](https://img.shields.io/badge/version-1.1.0.2-blue)](version.xml)
+[![OMP](https://img.shields.io/badge/OMP-3.5-brightgreen)](https://pkp.sfu.ca/omp/)
+[![Version](https://img.shields.io/badge/version-1.1.1.0-blue)](version.xml)
 [![License](https://img.shields.io/badge/license-GPL--3.0-lightgrey)](LICENSE)
 
-**⬇️ Install package:** [OJS 3.5](https://github.com/OJSBR/requiredMultilingualMetadata/releases/download/1.1.0.2/requiredMultilingualMetadata-1.1.0.2.tar.gz) — or browse all [Releases](../../releases).
+**⬇️ Install package:** [OJS / OMP 3.5](https://github.com/OJSBR/requiredMultilingualMetadata/releases/download/1.1.1.0/requiredMultilingualMetadata-1.1.1.0.tar.gz) — one package for both — or browse all [Releases](../../releases).
 
-A generic plugin for **Open Journal Systems (OJS)** that lets a journal require the **title**,
-the **abstract** and the **keywords** in metadata languages **beyond the submission's own
-language** — something OJS 3.5 cannot do on its own — **without patching OJS core** and
-**without blocking editorial staff** working on legacy submissions.
+A generic plugin for **Open Journal Systems (OJS)** and **Open Monograph Press (OMP)** that lets
+a journal or a press require the **title**, the **abstract** and the **keywords** in metadata
+languages **beyond the submission's own language** — something PKP 3.5 cannot do on its own —
+**without patching the core** and **without blocking editorial staff** working on legacy
+submissions.
+
+> Since 1.1.1.0 the OJS and the OMP editions are the same code, in this repository. The former
+> `requiredMultilingualMetadataOmp` repository is archived; its releases stay available there.
 
 > **Developed and maintained by [OJSBR](https://ojsbr.com).** See the
 > [Credits & authorship](#credits--authorship) section below.
 
 ## Compatibility & branches
 
-| OJS version | Branch | Plugin release |
+| Application | Branch | Plugin release |
 |-------------|--------|----------------|
-| OJS 3.5.x   | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.1.0.2 |
+| OJS 3.5.x and OMP 3.5.x | [`stable-3_5_0`](../../tree/stable-3_5_0) *(default)* | 1.1.1.0 |
 
 ## What it does
 
-In OJS 3.5 the title, the abstract and the keywords are required in **one language only: the
+In PKP 3.5 the title, the abstract and the keywords are required in **one language only: the
 submission's primary language**, chosen by the author on the first step of the wizard. Neither
 the journal's default language nor the language the author is browsing in has any effect, and
 there is no native setting to require a translation. This plugin adds that.
@@ -87,36 +92,44 @@ message about the extra languages does not show in that round: the OJS subclass 
 `Repository::validateSubmit()` assigns `$errors['abstract']` **after** the hook runs, replacing
 the array. The submission is still blocked (by the core's own error) and the field notice is
 still displayed; the author simply sees the two messages in different rounds. Title and
-keywords are not affected, because the core writes those **before** the hook. Cases `E09`,
-`E10` and `K10` in the test suite lock this invariant down.
+keywords are not affected, because the core writes those **before** the hook.
 
 ## Tests
 
-`tests/CASOS.md` (Portuguese) lists the full catalogue of 74 cases and what each suite covers.
+- **PHPUnit** (`tests/*Test.php`, on `PKP\tests\PKPTestCase`): the classes against the installed
+  PKP, the plugin found by PKP's plugin registry, only configured languages that are still
+  enabled being required, keywords only where they are required at all, an error added per
+  missing language without touching the core's own errors, nothing added for an exempt user,
+  when a value counts as empty (including a controlled vocabulary and empty markup), the tabs
+  the wizard opens and the notice on the field, the hooks used, the templates and the 38
+  translations. From the application root:
 
-```bash
-php plugins/generic/requiredMultilingualMetadata/tests/regressao.php
-```
+  ```bash
+  lib/pkp/lib/vendor/bin/phpunit --configuration lib/pkp/tests/phpunit.xml --no-coverage "$PWD/plugins/generic/requiredMultilingualMetadata/tests"
+  ```
 
-```bash
-php plugins/generic/requiredMultilingualMetadata/tests/regressao_http.php
-```
+- **Cypress** (`cypress/tests/functional/RequiredMultilingualMetadata.cy.js`, run by
+  [pkp-github-actions](https://github.com/pkp/pkp-github-actions) on OJS and OMP on every push):
+  enables the plugin and, given an author account (`authorUser`, `authorPassword`), requires the
+  title in a second metadata language, creates a submission as that author through the API and
+  checks that the submit endpoint refuses it naming the missing language, and accepts it once
+  the title is filled in. The submission is deleted and the settings are put back after the run;
+  the check is skipped where the journal or press has a single metadata language. It fails with
+  the rule's hook removed.
+- Verified on OJS 3.5.0.3 and OMP 3.5.0.5, the same package on both.
 
-The first suite calls the real OJS validation for settings, rule, roles, section handling, the
-keywords condition and core non-regression. The second logs into the site for real and covers
-the wizard, the settings screen and the end-to-end submission.
-
-Both restore everything they touch — plugin settings, section, journal languages, passwords,
-users and the submissions they create — and exit non-zero if any case fails. **Run them on a
-test installation, never in production**: they create and delete submissions, a temporary
-journal and a temporary manager account.
-
-Last run on OJS 3.5.0.3: **60/60** and **14/14**.
+Tests are kept in the repository and are not part of the release package.
 
 ## Credits & authorship
 
 - **Developed and maintained by** [OJSBR](https://ojsbr.com) — original plugin.
 - Distributed under the **GNU GPL v3**.
+
+## AI use
+
+Generative AI (Claude, by Anthropic) was used to write and run tests, improve the code and bring
+it in line with PKP standards. Every change is reviewed and tested by OJSBR, which is responsible
+for the published releases.
 
 ## Contributing
 
@@ -197,19 +210,31 @@ estar ativos na revista são ignorados em tempo de execução, sem precisar reco
 
 ### Testes
 
-O catálogo completo, com 74 casos, está em [`tests/CASOS.md`](tests/CASOS.md). São duas
-baterias: `tests/regressao.php` chama a validação real do OJS (configuração, regra, papéis,
-seção, condição das palavras-chave e não-regressão do núcleo) e `tests/regressao_http.php` loga
-de verdade no site e cobre o assistente, a tela de configuração e a submissão ponta a ponta.
+PHPUnit em `tests/` (sobre `PKP\tests\PKPTestCase`) e Cypress em `cypress/tests/functional/`
+(rodado pelo [pkp-github-actions](https://github.com/pkp/pkp-github-actions) no OJS e no OMP a
+cada push), com o comando da seção em inglês. A suíte cobre as classes contra o PKP instalado, o
+plugin encontrado pelo registro de plugins, só os idiomas configurados que continuam ativos sendo
+exigidos, palavras-chave só onde são exigidas, um erro por idioma faltando sem tocar nos erros do
+núcleo, nada acrescentado para quem é isento, quando um valor conta como vazio (inclusive
+vocabulário controlado e HTML vazio), as abas que o assistente abre e o aviso no campo, os hooks
+usados, os templates e as 38 traduções. O Cypress liga o plugin e, com uma conta de autor
+(`authorUser`, `authorPassword`), exige o título num segundo idioma de metadados, cria uma
+submissão como esse autor pela API e confere que o envio é recusado nomeando o idioma que falta e
+aceito depois que o título é preenchido; a submissão é apagada e a configuração volta ao que era no
+fim. Verificado no OJS 3.5.0.3 e no OMP 3.5.0.5, com o mesmo pacote.
 
-As duas restauram tudo o que tocam e devolvem código de saída diferente de zero se algum caso
-falhar. **Rode só em instalação de teste**: elas criam e apagam submissões, uma revista
-temporária e um gestor temporário. Última execução no OJS 3.5.0.3: **60/60** e **14/14**.
+Os testes ficam no repositório e não fazem parte do pacote da release.
 
 ### Créditos e autoria
 
 - **Desenvolvido e mantido pela** [OJSBR](https://ojsbr.com) — plugin autoral.
 - Distribuído sob a **GNU GPL v3**.
+
+### Uso de IA
+
+Foi usada IA generativa (Claude, da Anthropic) para escrever e rodar testes, melhorar o código e
+alinhá-lo aos padrões da PKP. Toda mudança é revisada e testada pela OJSBR, que responde pelas
+releases publicadas.
 
 ### Licença
 

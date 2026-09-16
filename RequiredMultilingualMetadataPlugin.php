@@ -1,23 +1,22 @@
 <?php
 
 /**
- * @file RequiredMultilingualMetadataPlugin.php
+ * @file plugins/generic/requiredMultilingualMetadata/RequiredMultilingualMetadataPlugin.php
  *
- * Plugin autoral OJSBR.
+ * Copyright (c) 2026 OJSBR (https://ojsbr.com)
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class RequiredMultilingualMetadataPlugin
  *
- * @brief Permite exigir título e resumo em idiomas ALÉM do idioma principal da
- *        submissão. O OJS 3.5 só cobra esses metadados no idioma da submissão
- *        (Repo::submission()->validateSubmit()); este plugin acrescenta os
- *        idiomas que a revista escolher, sem alterar o núcleo.
+ * @brief Requires the title, the abstract and the keywords in languages BESIDES the
+ *        submission's own. PKP 3.5 asks for this metadata in the submission language
+ *        only (Repo::submission()->validateSubmit()); the plugin adds the languages the
+ *        journal or press chooses, without patching the core.
  *
- *        A exigência vale para quem está submetendo. O corpo editorial (gestor
- *        e editor) não é bloqueado ao trabalhar em submissões de terceiros —
- *        legado costuma ter metadados faltando —, mas um gestor que submete o
- *        próprio artigo (isto é, com designação de AUTOR na submissão) entra
- *        na regra como qualquer outro autor.
+ *        The rule applies to whoever is submitting. Editorial staff working on someone
+ *        else's submission is not blocked — legacy material often lacks metadata — but a
+ *        manager submitting their own work (that is, with an AUTHOR assignment on the
+ *        submission) is bound by it like any other author.
  */
 
 namespace APP\plugins\generic\requiredMultilingualMetadata;
@@ -38,13 +37,13 @@ use PKP\stageAssignment\StageAssignment;
 
 class RequiredMultilingualMetadataPlugin extends GenericPlugin
 {
-    /** Campos cobertos pelo plugin. Cada um tem sua própria lista de idiomas. */
+    /** The fields the plugin covers. Each one has its own list of languages. */
     public const FIELDS = ['title', 'abstract', 'keywords'];
 
-    /** Template do assistente de submissão, onde as abas de idioma são abertas. */
+    /** The submission wizard template, where the language tabs are opened. */
     public const WIZARD_TEMPLATE = 'submission/wizard.tpl';
 
-    /** Id do formulário de título/resumo dentro do estado do assistente. */
+    /** Id of the title/abstract form inside the wizard's state. */
     public const TITLE_ABSTRACT_FORM = 'titleAbstract';
 
     /**
@@ -61,21 +60,21 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
             return true;
         }
 
-        // Regra de fato: acrescenta erros na validação do botão "Enviar".
+        // The rule itself: more errors on the validation of the "Submit" button.
         Hook::add('Submission::validateSubmit', [$this, 'validateSubmit']);
 
-        // Usabilidade: abre as abas dos idiomas exigidos já no assistente.
+        // Usability: the tabs of the required languages are opened in the wizard.
         Hook::add('TemplateManager::display', [$this, 'openRequiredLocales']);
 
         return true;
     }
 
     //
-    // Configuração
+    // Settings
     //
 
     /**
-     * Idiomas de metadados ativos na revista (códigos de submissão, ex.: en_US).
+     * The metadata languages enabled in the journal or press (submission codes).
      *
      * @return array<int, string>
      */
@@ -85,7 +84,7 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
     }
 
     /**
-     * Idiomas configurados como obrigatórios para um campo, sem filtro algum.
+     * The languages configured as required for a field, unfiltered.
      *
      * @return array<int, string>
      */
@@ -96,9 +95,9 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
     }
 
     /**
-     * Idiomas realmente exigíveis para um campo nesta submissão: os configurados,
-     * menos o idioma da própria submissão (que o núcleo já cobra) e menos os que
-     * deixaram de estar ativos na revista.
+     * The languages a field can really be required in for this submission: the configured
+     * ones, without the submission's own language (the core already asks for it) and
+     * without those no longer enabled in the journal or press.
      *
      * @return array<int, string>
      */
@@ -113,29 +112,27 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
     }
 
     //
-    // Regra
+    // The rule
     //
 
     /**
-     * Hook Submission::validateSubmit — acrescenta os erros dos idiomas extras.
+     * Hook Submission::validateSubmit — adds the errors of the extra languages.
      *
-     * O núcleo já preencheu $errors com o idioma da submissão; aqui só somamos
-     * chaves de locale, nunca sobrescrevemos o que já existe.
+     * The core has already filled $errors for the submission language; only locale keys
+     * are added here, and nothing that is already there is overwritten.
      *
-     * ATENÇÃO (comportamento do OJS, não do plugin): este hook é disparado no fim de
-     * PKP\submission\Repository::validateSubmit(), e a subclasse do OJS
-     * (APP\submission\Repository::validateSubmit()) roda DEPOIS e faz
-     * `$errors['abstract'] = [$locale => ...]` — atribuição, não merge. Então, quando o
-     * resumo está vazio no idioma da submissão (ou estoura o limite de palavras da seção),
-     * a mensagem do plugin para os idiomas extras é descartada naquela rodada.
+     * Note, and this is the core's behaviour, not the plugin's: the hook is called at the
+     * end of PKP\submission\Repository::validateSubmit(), and the application's subclass
+     * (APP\submission\Repository::validateSubmit()) runs AFTERWARDS and does
+     * `$errors['abstract'] = [$locale => ...]` — an assignment, not a merge. So when the
+     * abstract is empty in the submission language (or, in OJS, longer than the section's
+     * word limit), the plugin's message for the extra languages is dropped in that round.
      *
-     * Isso não abre buraco na regra: o núcleo só sobrescreve quando ele mesmo colocou um
-     * erro bloqueante em `abstract`. A submissão continua barrada; o autor só vê as duas
-     * mensagens em rodadas diferentes. O aviso no campo ("Obrigatório também em: …"), que o
-     * plugin escreve no assistente, cobre a lacuna visual. O título não sofre disso, porque
-     * o núcleo escreve `$errors['title']` antes do hook.
-     *
-     * Coberto por E02, E09 e E10 em tests/regressao.php.
+     * The rule is not weakened by it: the core only overwrites when it has put a blocking
+     * error on `abstract` itself, so the submission stays blocked; the author simply sees
+     * the two messages in different rounds. The notice the plugin writes on the field in
+     * the wizard ("Also required in: …") covers the visual gap. The title is not affected,
+     * because the core writes `$errors['title']` before the hook.
      */
     public function validateSubmit(string $hookName, array $args): bool
     {
@@ -171,9 +168,9 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
     }
 
     /**
-     * A regra não vale para o corpo editorial trabalhando em submissão alheia
-     * (legado com metadados faltando não pode travar o editor). Vale para todo
-     * mundo que está submetendo como autor, inclusive gestor e editor.
+     * The rule does not apply to editorial staff working on someone else's submission
+     * (legacy material with missing metadata must not block an editor). It applies to
+     * everyone submitting as an author, managers and editors included.
      */
     public function isExempt(Submission $submission, Context $context): bool
     {
@@ -191,7 +188,7 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
             return false;
         }
 
-        // Designação de AUTOR nesta submissão => está submetendo como autor.
+        // An AUTHOR assignment on this submission means they are submitting as an author.
         $isAuthorHere = StageAssignment::withSubmissionIds([$submission->getId()])
             ->withRoleIds([Role::ROLE_ID_AUTHOR])
             ->withUserId($user->getId())
@@ -202,13 +199,14 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
     }
 
     /**
-     * Campos em que a regra do plugin pode incidir agora, nesta revista e nesta seção.
+     * The fields the rule can apply to now, in this journal or press and this section.
      *
-     * - título: sempre;
-     * - resumo: a não ser que a seção esteja marcada como "Resumo não obrigatório";
-     * - palavras-chave: SÓ quando a revista as exige (Fluxo de Trabalho > Metadados >
-     *   Palavras-chave = "Exigir"). Se estiverem como "Solicitar", "Habilitar" ou
-     *   desabilitadas, o plugin não encosta nelas, mesmo que haja idioma configurado.
+     * - title: always;
+     * - abstract: unless the section is marked "Abstracts not required" (OJS only: the
+     *   series of a press have no such flag);
+     * - keywords: ONLY when the journal or press requires them (Workflow > Metadata >
+     *   Keywords = "Require"). With "Request", "Enable" or disabled, the plugin leaves
+     *   them alone, even when a language is configured.
      *
      * @return array<int, string>
      */
@@ -225,7 +223,7 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
     }
 
     /**
-     * A revista exige palavras-chave? (só 'require' conta; 'request' e 'enable' não)
+     * Does the journal or press require keywords? ('request' and 'enable' do not count.)
      */
     public function isKeywordsRequired(Context $context): bool
     {
@@ -233,11 +231,10 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
     }
 
     /**
-     * Um metadado está vazio neste idioma?
+     * Is a metadata field empty in this language?
      *
-     * Título e resumo são texto; palavras-chave são vocabulário controlado, e voltam como
-     * lista de strings (ou null quando não há nenhuma). Uma lista só com strings em branco
-     * também conta como vazia.
+     * Title and abstract are text; keywords are a controlled vocabulary and come back as a
+     * list of strings (or null when there is none). A list of blank strings counts as empty.
      */
     private function isEmptyValue(mixed $value): bool
     {
@@ -247,9 +244,9 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
 
         if (is_array($value)) {
             foreach ($value as $item) {
-                // O vocabulário controlado pode vir como string ou como entry-data.
-                $texto = is_array($item) ? ($item['name'] ?? '') : $item;
-                if (trim((string) $texto) !== '') {
+                // The controlled vocabulary comes as a string or as entry data.
+                $text = is_array($item) ? ($item['name'] ?? '') : $item;
+                if (trim((string) $text) !== '') {
                     return false;
                 }
             }
@@ -261,7 +258,9 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
     }
 
     /**
-     * O resumo é obrigatório nesta seção? (respeita "Resumo não obrigatório")
+     * Is the abstract required in this section? In OJS a section can be marked "Abstracts
+     * not required"; the series of a press have no such flag, so there the abstract is
+     * always required.
      */
     public function isAbstractRequired(?int $sectionId, Context $context): bool
     {
@@ -270,11 +269,11 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
         }
         $section = Repo::section()->get($sectionId, $context->getId());
 
-        return $section ? !$section->getAbstractsNotRequired() : true;
+        return !$section || !method_exists($section, 'getAbstractsNotRequired') || !$section->getAbstractsNotRequired();
     }
 
     /**
-     * Nome do idioma como o OJS o exibe nos metadados de submissão.
+     * The language name as the application shows it in submission metadata.
      */
     public function getLocaleName(string $locale): string
     {
@@ -282,16 +281,16 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
     }
 
     //
-    // Usabilidade no assistente
+    // Usability in the wizard
     //
 
     /**
-     * Hook TemplateManager::display — no assistente de submissão, o núcleo fixa
-     * visibleLocales = [idioma da submissão] (PKPSubmissionHandler::getLocalizedForm),
-     * então o autor levaria erro num campo que nem está vendo. Aqui abrimos as abas
-     * dos idiomas exigidos e anotamos isso na descrição do campo.
+     * Hook TemplateManager::display — in the submission wizard the core sets
+     * visibleLocales = [the submission language] (PKPSubmissionHandler::getLocalizedForm),
+     * so the author would be given an error on a field they cannot even see. The tabs of
+     * the required languages are opened here, and the field says so in its description.
      *
-     * O hook roda antes de TemplateManager::display() copiar o estado para o template.
+     * The hook runs before TemplateManager::display() copies the state to the template.
      */
     public function openRequiredLocales(string $hookName, array $args): bool
     {
@@ -320,9 +319,37 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
             return Hook::CONTINUE;
         }
 
+        $changed = $this->wizardSteps($steps, $context, $submission, $submissionLocale);
+        if ($changed === $steps) {
+            return Hook::CONTINUE;
+        }
+        $steps = $changed;
+
+        // The notice written on the field is styled by the plugin's stylesheet.
+        $templateMgr->addStyleSheet(
+            'requiredMultilingualMetadata',
+            Application::get()->getRequest()->getBaseUrl() . '/' . $this->getPluginPath() . '/css/settingsForm.css',
+            ['contexts' => 'backend']
+        );
+        $templateMgr->setState(['steps' => $steps]);
+
+        return Hook::CONTINUE;
+    }
+
+
+    /**
+     * The steps of the wizard with the tabs of the required languages open and the notice
+     * on each field, or the steps unchanged when there is nothing to require.
+     *
+     * @param array $steps The `steps` state of the wizard
+     *
+     * @return array The steps, changed or not
+     */
+    public function wizardSteps(array $steps, Context $context, Submission $submission, string $submissionLocale): array
+    {
         $sectionId = $submission->getCurrentPublication()?->getData('sectionId');
 
-        // Idiomas exigidos por campo, já filtrados.
+        // The required languages of each field, already filtered.
         $byField = [];
         foreach ($this->getApplicableFields($context, $sectionId) as $field) {
             $locales = $this->getEnforceableLocales($context, $field, $submissionLocale);
@@ -332,7 +359,7 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
         }
 
         if (!$byField) {
-            return Hook::CONTINUE;
+            return $steps;
         }
 
         $extraLocales = array_values(array_unique(array_merge(...array_values($byField))));
@@ -346,7 +373,7 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
                     continue;
                 }
 
-                // Abre as abas: idioma da submissão primeiro, depois os exigidos.
+                // The tabs: the submission language first, then the required ones.
                 $supported = array_column($section['form']['supportedFormLocales'] ?? [], 'key');
                 $visible = [$submissionLocale];
                 foreach ($extraLocales as $locale) {
@@ -356,7 +383,7 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
                 }
                 $section['form']['visibleLocales'] = array_values(array_unique($visible));
 
-                // Avisa no próprio campo em quais idiomas ele é exigido.
+                // The field itself says in which languages it is required.
                 foreach ($section['form']['fields'] as &$field) {
                     $name = $field['name'] ?? '';
                     if (!isset($byField[$name])) {
@@ -376,13 +403,11 @@ class RequiredMultilingualMetadataPlugin extends GenericPlugin
         }
         unset($step);
 
-        $templateMgr->setState(['steps' => $steps]);
-
-        return Hook::CONTINUE;
+        return $steps;
     }
 
     //
-    // Boilerplate do plugin
+    // Plugin boilerplate
     //
 
     /**
