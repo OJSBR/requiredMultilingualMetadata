@@ -147,13 +147,126 @@ describe('Required Multilingual Metadata plugin', function() {
 		});
 	});
 
+	// A site with the Altcha captcha turned on for registration expects a solved
+	// proof of work along with the form. The PKP test data has it off, so this is
+	// a no-op there; solving it is what lets the very same spec run against a real
+	// installation.
+	const solveAltcha = (win) => {
+		const widget = win.document.querySelector('altcha-widget');
+		if (!widget) {
+			return;
+		}
+		const challenge = JSON.parse(widget.getAttribute('challengejson'));
+		const encoder = new win.TextEncoder();
+		const digest = async (number) => {
+			const buffer = await win.crypto.subtle.digest(challenge.algorithm, encoder.encode(challenge.salt + number));
+			return [...new Uint8Array(buffer)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
+		};
+
+		return (async () => {
+			for (let number = 0; number <= (challenge.maxnumber || 100000); number++) {
+				if (await digest(number) === challenge.challenge) {
+					const input = win.document.createElement('input');
+					input.type = 'hidden';
+					input.name = 'altcha';
+					input.value = win.btoa(JSON.stringify({
+						algorithm: challenge.algorithm,
+						challenge: challenge.challenge,
+						number: number,
+						salt: challenge.salt,
+						signature: challenge.signature,
+						took: 1,
+					}));
+					win.document.querySelector('form[id=register]').appendChild(input);
+					widget.remove();
+
+					return;
+				}
+			}
+			throw new Error('the Altcha challenge could not be solved');
+		})();
+	};
+
+	// An iD, different at each call, for a journal that requires one to register.
+	let orcidSeed = Math.floor(Math.random() * 900000);
+	const anOrcid = () => {
+		const digits = ('000000021' + String(orcidSeed++).padStart(6, '0')).slice(0, 15);
+		let total = 0;
+		for (const digit of digits) {
+			total = (total + Number(digit)) * 2;
+		}
+		const result = (12 - (total % 11)) % 11;
+
+		return 'https://orcid.org/' + (digits + (result === 10 ? 'X' : String(result))).replace(/(.{4})(.{4})(.{4})(.{4})/, '$1-$2-$3-$4');
+	};
+
+	// Registers a person through the public form and hands their credentials back.
+	// The rule exempts editorial staff working on someone else's submission, so the
+	// test needs someone who submits as an author; the journal gives the author role
+	// to whoever submits without one. Whatever else the journal asks for on that page
+	// is filled in, so the test reports on this plugin only.
+	const registerAuthor = () => {
+		const account = {
+			username: 'rmmauthor' + Date.now().toString().slice(-8),
+			password: 'Ojsbr!Teste2026',
+		};
+		account.email = account.username + '@mailinator.com';
+
+		cy.clearCookies();
+		cy.visit(pageUrl('user/register') + '?reload=' + Date.now());
+		cy.get('form#register input[name="givenName"]').type('Autor', {delay: 0});
+		cy.get('form#register input[name="familyName"]').type('Multilingue', {delay: 0});
+		cy.get('form#register input[name="affiliation"]').type('OJSBR', {delay: 0});
+		cy.get('form#register select[name="country"]').select('BR');
+		cy.get('form#register input[name="email"]').type(account.email, {delay: 0});
+		cy.get('form#register input[name="username"]').type(account.username, {delay: 0});
+		cy.get('form#register input[name="password"]').type(account.password, {delay: 0, log: false});
+		cy.get('form#register input[name="password2"]').type(account.password, {delay: 0, log: false});
+		cy.get('body').then(($body) => {
+			if ($body.find('form#register input[name="privacyConsent"]').length) {
+				cy.get('form#register input[name="privacyConsent"]').check({force: true});
+			}
+			if ($body.find('form#register input[name="orcid"]').length) {
+				cy.get('form#register input[name="orcid"]').clear().type(anOrcid(), {delay: 0});
+			}
+			if ($body.find('form#register input[name="whatsapp"]').length) {
+				cy.get('form#register input[name="whatsapp"]').clear().type('+5511988887777', {delay: 0});
+			}
+		});
+		cy.window().then((win) => solveAltcha(win));
+		cy.get('form#register').submit();
+		cy.get('form#register', {timeout: 30000}).should('not.exist');
+
+		// A journal that validates new accounts by e-mail leaves them disabled; the
+		// account is enabled the way an editor enables one.
+		login(adminUser, adminPassword);
+		api(pageUrl('api/v1/users?searchPhrase=' + account.username + '&count=10')).then((users) => {
+			const user = (users.items || []).find((item) => item.userName === account.username || item.username === account.username);
+			expect(user, 'the account of the author was created').to.exist;
+			account.id = user.id;
+			cy.window({log: false}).then((win) => request({
+				method: 'POST',
+				url: pageUrl('$$$call$$$/grid/settings/user/user-grid/disable-user'),
+				form: true,
+				failOnStatusCode: false,
+				body: {userId: user.id, enable: 1, disableReason: '', csrfToken: win.pkp.currentUser.csrfToken},
+			}));
+		});
+
+		return cy.wrap(account, {log: false});
+	};
+
 	it('Enables the plugin', function() {
 		login(adminUser, adminPassword);
 		openPluginsTab();
 		enablePlugin(row);
 	});
 
-	(authorUser ? it : it.skip)('Blocks the submission until the title is filled in every required language', function() {
+	// The rule applies to whoever submits as an author, and the core makes the
+	// submitter an author of the submission they create: no second account is
+	// needed for the test to be real. One can still be passed (--env authorUser),
+	// and then the submission is made by that person instead.
+	it('Blocks the submission until the title is filled in every required language', function() {
 		login(adminUser, adminPassword);
 		openPluginsTab();
 		openPluginSettings(row, form);
@@ -185,11 +298,17 @@ describe('Required Multilingual Metadata plugin', function() {
 				sectionId = id;
 			});
 
-			// The submission is made by the author, who is the one the rule applies to.
-			login(authorUser, authorPassword);
-			cy.visit(pageUrl('submissions') + '?reload=' + Date.now());
-			cy.window({timeout: 60000}).its('pkp.currentUser.csrfToken').then((authorToken) => {
-				token = authorToken;
+			// The submission is made by the person the rule applies to: the account
+			// given on the command line, or one registered here for the purpose.
+			(authorUser
+				? cy.wrap({username: authorUser, password: authorPassword}, {log: false})
+				: registerAuthor()
+			).then((account) => {
+				login(account.username, account.password);
+				cy.visit(pageUrl('user/profile') + '?reload=' + Date.now());
+				cy.window({timeout: 60000}).its('pkp.currentUser.csrfToken').then((authorToken) => {
+					token = authorToken;
+				});
 			});
 
 			cy.window().then((win) => cy.wrap((async() => {
@@ -231,7 +350,11 @@ describe('Required Multilingual Metadata plugin', function() {
 				createdSubmissionId = result.submissionId;
 
 				// The plugin's error names the missing language, and nothing else was replaced.
-				expect(result.blocked.body.title, 'errors of the title').to.not.be.undefined;
+				// Nothing here would also be what an exempt submitter sees, so the
+				// message says which of the two happened.
+				expect(result.blocked.body.title, 'the title was held: nothing here means the rule did not apply, '
+					+ 'which happens when whoever submitted is exempt (editorial staff on someone else\'s submission)')
+					.to.not.be.undefined;
 				expect(Object.keys(result.blocked.body.title)).to.include(extraLocale);
 				expect(JSON.stringify(result.blocked.body.title[extraLocale])).to.not.contain('##');
 
